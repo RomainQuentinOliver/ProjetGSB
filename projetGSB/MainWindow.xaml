@@ -5,23 +5,40 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Background="AliceBlue">
-        <Image Source="gsb.png" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="138" Margin="10,0,0,0"/>
-        <ComboBox x:Name="cboTin"  IsEditable="True" IsReadOnly="True" Text="Type individu" HorizontalAlignment="Left" Margin="153,20,0,0" VerticalAlignment="Top" Width="120" FontSize="13">
+        Title="MainWindow" Height="550" Width="1000">
+    <Grid Background="AliceBlue" Margin="0,0,-0.4,-30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="73*"/>
+            <RowDefinition Height="137*"/>
+        </Grid.RowDefinitions>
+        <Label Content="Type d'individus" HorizontalAlignment="Left" Margin="127,150,0,0" VerticalAlignment="Top" FontFamily="Candara Light" FontSize="18" Height="32" Width="128"/>
+        <Label Content="Médicaments" HorizontalAlignment="Left" Margin="510,150,0,0" VerticalAlignment="Top" FontFamily="Candara Light" FontSize="18" Height="32" Width="112"/>
+        <GroupBox Background="BlanchedAlmond" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="994" Opacity="0.7"/>
+        <Image Source="gsb.png" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="124" Margin="32,8,0,0"/>
+        <ComboBox x:Name="cboTin"  IsEditable="True" IsReadOnly="True" Text="Type individu" HorizontalAlignment="Left" Margin="175,28,0,0" VerticalAlignment="Top" Width="120" FontSize="13" SelectionChanged="cboTin_SelectionChanged" Height="23">
             <ComboBoxItem Content="Ajouter" HorizontalAlignment="Left" Width="118.4"/>
             <ComboBoxItem Content="Modifier" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>
-        <ComboBox x:Name="cboMed"  IsEditable="True" IsReadOnly="True" Text="Médicaments" HorizontalAlignment="Left" Margin="308,20,0,0" VerticalAlignment="Top" Width="120" FontSize="13">
+        <ComboBox x:Name="cboMed"  IsEditable="True" IsReadOnly="True" Text="Médicaments" HorizontalAlignment="Left" Margin="330,28,0,0" VerticalAlignment="Top" Width="120" FontSize="13" Height="23">
             <ComboBoxItem Content="Ajouter" HorizontalAlignment="Left" Width="118.4"/>
             <ComboBoxItem Content="Modifier" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>
-        <Button Background="white" x:Name="btnStat" Content="Statistiques" HorizontalAlignment="Left" Margin="632,20,0,0" VerticalAlignment="Top" Width="120" Height="22" FontSize="13"/>
-        <Button Background="White" x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="460,20,0,0" VerticalAlignment="Top" Width="137" Height="22" FontSize="13"/>
-        <ListBox x:Name="lbTin" HorizontalAlignment="Left" Height="257" Margin="108,120,0,0" VerticalAlignment="Top" Width="228"/>
-        <ListBox x:Name="lbMed" HorizontalAlignment="Left" Height="257" Margin="460,120,0,0" VerticalAlignment="Top" Width="228"/>
-        <Label Content="Type d'individus" HorizontalAlignment="Left" Margin="108,89,0,0" VerticalAlignment="Top" FontFamily="Candara Light" FontSize="18"/>
-        <Label Content="Médicaments" HorizontalAlignment="Left" Margin="460,89,0,0" VerticalAlignment="Top" FontFamily="Candara Light" FontSize="18"/>
+        <Button Background="white" x:Name="btnStat" Content="Statistiques" HorizontalAlignment="Left" Margin="650,28,0,0" VerticalAlignment="Top" Width="120" Height="22" FontSize="13"/>
+        <Button Background="White" x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="482,28,0,0" VerticalAlignment="Top" Width="137" Height="22" FontSize="13"/>
+        <ListView x:Name="lvTin" HorizontalAlignment="Left" Height="235" Margin="127,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="260">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <ListView x:Name="lvMed" HorizontalAlignment="Left" Height="235" Margin="510,22,0,0" Grid.Row="1" VerticalAlignment="Top" Width="260">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
 
     </Grid>
 </Window>

@@ -24,5 +24,10 @@ namespace projetGSB
         {
             InitializeComponent();
         }
+
+        private void cboTin_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

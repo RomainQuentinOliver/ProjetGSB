@@ -6,22 +6,22 @@
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <Grid Background="AliceBlue">
         <Image Source="gsb.png" HorizontalAlignment="Left" Height="80" VerticalAlignment="Top" Width="138" Margin="10,0,0,0"/>
-        <ComboBox x:Name="cboTin"  IsEditable="True" IsReadOnly="True" Text="Type individu" HorizontalAlignment="Left" Margin="153,20,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="cboTin"  IsEditable="True" IsReadOnly="True" Text="Type individu" HorizontalAlignment="Left" Margin="153,20,0,0" VerticalAlignment="Top" Width="120" FontSize="13">
             <ComboBoxItem Content="Ajouter" HorizontalAlignment="Left" Width="118.4"/>
             <ComboBoxItem Content="Modifier" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>
-        <ComboBox x:Name="cboMed"  IsEditable="True" IsReadOnly="True" Text="Médicaments" HorizontalAlignment="Left" Margin="308,20,0,0" VerticalAlignment="Top" Width="120">
+        <ComboBox x:Name="cboMed"  IsEditable="True" IsReadOnly="True" Text="Médicaments" HorizontalAlignment="Left" Margin="308,20,0,0" VerticalAlignment="Top" Width="120" FontSize="13">
             <ComboBoxItem Content="Ajouter" HorizontalAlignment="Left" Width="118.4"/>
             <ComboBoxItem Content="Modifier" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>
-        <Button x:Name="btnStat" Content="Statistiques" HorizontalAlignment="Left" Margin="632,20,0,0" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="460,20,0,0" VerticalAlignment="Top" Width="137"/>
+        <Button Background="white" x:Name="btnStat" Content="Statistiques" HorizontalAlignment="Left" Margin="632,20,0,0" VerticalAlignment="Top" Width="120" Height="22" FontSize="13"/>
+        <Button Background="White" x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="460,20,0,0" VerticalAlignment="Top" Width="137" Height="22" FontSize="13"/>
         <ListBox x:Name="lbTin" HorizontalAlignment="Left" Height="257" Margin="108,120,0,0" VerticalAlignment="Top" Width="228"/>
         <ListBox x:Name="lbMed" HorizontalAlignment="Left" Height="257" Margin="460,120,0,0" VerticalAlignment="Top" Width="228"/>
-        <Label Content="Types d'individus" HorizontalAlignment="Left" Margin="108,89,0,0" VerticalAlignment="Top"/>
-        <Label Content="Médicaments" HorizontalAlignment="Left" Margin="460,89,0,0" VerticalAlignment="Top"/>
+        <Label Content="Type d'individus" HorizontalAlignment="Left" Margin="108,89,0,0" VerticalAlignment="Top" FontFamily="Candara Light" FontSize="18"/>
+        <Label Content="Médicaments" HorizontalAlignment="Left" Margin="460,89,0,0" VerticalAlignment="Top" FontFamily="Candara Light" FontSize="18"/>
 
     </Grid>
 </Window>

@@ -33,7 +33,7 @@
             <ComboBoxItem Name="ajouterMed" Content="Ajouter" HorizontalAlignment="Left" Width="118.4"/>
             <ComboBoxItem Name="modiferMed" Content="Modifier" HorizontalAlignment="Left" Width="118.4"/>
         </ComboBox>
-        <Button Background="white" Name="btnStat" Content="Statistiques" HorizontalAlignment="Left" Margin="650,28,0,0" VerticalAlignment="Top" Width="120" Height="22" FontSize="13">
+        <Button Background="white" Name="btnStat" Content="Statistiques" HorizontalAlignment="Left" Margin="668,28,0,0" VerticalAlignment="Top" Width="120" Height="22" FontSize="13">
             <Button.Effect>
                 <DropShadowEffect BlurRadius="4" Opacity="0.5" ShadowDepth="4"/>
             </Button.Effect>

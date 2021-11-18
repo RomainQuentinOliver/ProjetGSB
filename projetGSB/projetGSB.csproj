@@ -55,10 +55,31 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AjouterMed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AjouterPre.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AjouterTin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AjouterMed.xaml.cs">
+      <DependentUpon>AjouterMed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterPre.xaml.cs">
+      <DependentUpon>AjouterPre.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjouterTin.xaml.cs">
+      <DependentUpon>AjouterTin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -67,8 +88,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ModifierMed.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ModifierTin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ModifierMed.xaml.cs">
+      <DependentUpon>ModifierMed.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ModifierTin.xaml.cs">
+      <DependentUpon>ModifierTin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -96,6 +131,16 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="gsb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Bibliothèque\Bibliothèque.csproj">
+      <Project>{1fa0aa45-bacd-4884-9f92-1c6de44fa1ed}</Project>
+      <Name>Bibliothèque</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GstBdd\GstBdd.csproj">
+      <Project>{1f0218cc-27c2-469c-9a47-13a0bc8de086}</Project>
+      <Name>GstBdd</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

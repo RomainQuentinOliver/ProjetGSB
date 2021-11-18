@@ -1,0 +1,40 @@
+﻿<Window x:Class="projetGSB.AjouterMed"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetGSB"
+        mc:Ignorable="d"
+        Title="AjouterMed" Height="450" Width="800">
+    <Grid  Background="AliceBlue">
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="792" Opacity="0.7">
+            <Image Source="gsb.png" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="124" Margin="8,-4,0,-2">
+                <Image.Effect>
+                    <DropShadowEffect Opacity="0.4"/>
+                </Image.Effect>
+            </Image>
+        </GroupBox>
+
+        <Label Foreground="white" Content="Nouveau Médicament" HorizontalAlignment="Left" Margin="268,24,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light"/>
+        <Label Content="Famille " HorizontalAlignment="Left" Margin="89,121,0,0" VerticalAlignment="Top" FontSize="14"/>
+
+        <ComboBox Name="cboFamille" HorizontalAlignment="Left" Margin="89,150,0,0" VerticalAlignment="Top" Width="150"/>
+        <TextBox HorizontalAlignment="Left" Height="53" Margin="89,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox Name="nomMed" HorizontalAlignment="Left" Height="23" Margin="89,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Label Content="Nom" HorizontalAlignment="Left" Margin="89,172,0,0" VerticalAlignment="Top"/>
+        <Label Content="Composition" HorizontalAlignment="Left" Margin="89,300,0,0" VerticalAlignment="Top"/>
+        <Label Content="Effets" HorizontalAlignment="Left" Margin="318,124,0,0" VerticalAlignment="Top"/>
+        <Label Content="Contre Indications" HorizontalAlignment="Left" Margin="318,250,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="composition" HorizontalAlignment="Left" Height="53" Margin="89,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox Name="contreindic" HorizontalAlignment="Left" Height="100" Margin="318,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox Name="effet" HorizontalAlignment="Left" Height="91" Margin="318,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <TextBox Name="prixMed" HorizontalAlignment="Left" Height="23" Margin="88,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+        <Label Content="Prix échantillon" HorizontalAlignment="Left" Margin="89,237,0,0" VerticalAlignment="Top"/>
+        <Label Content="Médicament(s) perturbateur(s)" HorizontalAlignment="Left" Margin="541,121,0,0" VerticalAlignment="Top"/>
+        <ListBox Name="lstMedPerturbateur" HorizontalAlignment="Left" Height="229" Margin="541,150,0,0" VerticalAlignment="Top" Width="185"/>
+
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="88,457,0,0" VerticalAlignment="Top" Width="75" Height="34" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
+        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="258,457,0,0" VerticalAlignment="Top" Width="267" Height="34" BorderBrush="#FF0275D8" Foreground="White"/>
+
+    </Grid>
+</Window>

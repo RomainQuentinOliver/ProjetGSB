@@ -1,0 +1,25 @@
+﻿<Window x:Class="projetGSB.AjouterTin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetGSB"
+        mc:Ignorable="d"
+        Title="AjouterTin" Height="450" Width="450">
+    <Grid  Background="AliceBlue">
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7">
+            <Image Source="gsb.png" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="117" Margin="8,-4,0,0">
+                <Image.Effect>
+                    <DropShadowEffect Opacity="0.4"/>
+                </Image.Effect>
+            </Image>
+        </GroupBox>
+
+        <Label Foreground="white" Content="Nouveau Type d'individu" HorizontalAlignment="Left" Margin="142,21,-10,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light" Width="260"/>
+        <Label Content="Libelle " HorizontalAlignment="Left" Margin="82,154,0,0" VerticalAlignment="Top" FontSize="14" Width="60"/>
+        <TextBox Name="libelleTin" HorizontalAlignment="Left" Height="23" Margin="142,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161"/>
+        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="142,208,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.12,1.75" Height="28" BorderBrush="#FF0275D8" Foreground="White"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="28,367,0,0" VerticalAlignment="Top" Width="90" Height="33" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
+
+    </Grid>
+</Window>

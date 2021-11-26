@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="MainWindow" Height="720" Width="1280" Loaded="Window_Loaded_accueil">
+        Title="MainWindow" Height="720" Width="1480" Loaded="Window_Loaded_accueil">
     <Grid Background="AliceBlue" Margin="0,0,-0.4,-30">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="64*"/>
@@ -16,12 +16,12 @@
             <RowDefinition Height="219*"/>
             <RowDefinition Height="252*"/>
         </Grid.RowDefinitions>
-        <GroupBox Background="#FF292B2C" Header="" HorizontalAlignment="Left" Height="107" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7" Grid.ColumnSpan="2">
+        <GroupBox Background="#FF292B2C" Header="" HorizontalAlignment="Left" Height="107" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1474" Opacity="0.7" Grid.ColumnSpan="2">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.2" Direction="300"/>
             </GroupBox.Effect>
         </GroupBox>
-        <Button BorderBrush="#FF546B7F" Background="AliceBlue" Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="148,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" Click="btnAjoutPre_Click" FontFamily="DejaVu Sans" Grid.Column="1" RenderTransformOrigin="1,1"/>
+        <Button BorderBrush="#FF546B7F" Background="AliceBlue" Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="10,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" Click="btnAjoutPre_Click" FontFamily="DejaVu Sans" Grid.Column="1" RenderTransformOrigin="1,1"/>
         <Image Source="gsb.png" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="128" Margin="25,10,0,0">
             <Image.Effect>
                 <DropShadowEffect Opacity="0.4"/>
@@ -29,8 +29,9 @@
         </Image>
 
         <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnNewPre_Copy" Content="Nouveau Type Invdividu" HorizontalAlignment="Left" Margin="183,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" Click="btnAjouTin_Click" FontFamily="DejaVu Sans"/>
-        <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnNewPre_Copy1" Content="Nouveau Médicament" Margin="611,31,105,0" VerticalAlignment="Top" Height="40" FontSize="13" Click="btnAjoutMed_Click" FontFamily="DejaVu Sans"/>
+        <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnNewPre_Copy1" Content="Nouveau Médicament" Margin="611,31,233,0" VerticalAlignment="Top" Height="40" FontSize="13" Click="btnAjoutMed_Click" FontFamily="DejaVu Sans"/>
         <Button BorderBrush="#FFB1B1B1" Background="AliceBlue" x:Name="btnModifTn" Click="btnModifierTin_Click" Content="Modifier Type Individu" HorizontalAlignment="Left" Margin="397,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" FontFamily="DejaVu Sans"/>
         <Button BorderBrush="#FFB1B1B1" Background="AliceBlue" Name="btnModifMed" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="828,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13"  Click="btnModifierMed_Click" FontFamily="DejaVu Sans" Grid.ColumnSpan="2"/>
+        <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnAjtPerturbateur" Content="Ajouter Perturbateur" HorizontalAlignment="Left" Margin="228,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" FontFamily="DejaVu Sans" Grid.Column="1" RenderTransformOrigin="1,1"/>
     </Grid>
 </Window>

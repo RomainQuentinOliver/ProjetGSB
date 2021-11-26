@@ -16,7 +16,7 @@
         </GroupBox>
 
         <Label Foreground="white" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="144,20,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light"/>
-        <ComboBox Name="cboMed" HorizontalAlignment="Left" Margin="194,102,0,0" VerticalAlignment="Top" Width="157">
+        <ComboBox Name="cboMed" HorizontalAlignment="Left" Margin="195,157,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -25,7 +25,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox Name="cboTin" HorizontalAlignment="Left" Margin="194,141,0,0" VerticalAlignment="Top" Width="157">
+        <ComboBox Name="cboTin" HorizontalAlignment="Left" Margin="195,196,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -34,20 +34,12 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="193,184,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
-        <TextBox Name="txtQte" HorizontalAlignment="Left" Height="23" Margin="194,288,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
-        <TextBox Name="txtUnite" HorizontalAlignment="Left" Height="23" Margin="193,325,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
-        <Label Content="Dosage" HorizontalAlignment="Left" Margin="229,222,0,0" VerticalAlignment="Top" FontSize="16"/>
-        <Label Content="Médicament" HorizontalAlignment="Left" Margin="117,98,0,0" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Margin="128,299,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posologie" HorizontalAlignment="Left" Margin="130,184,0,0" VerticalAlignment="Top"/>
-        <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="103,137,0,0" VerticalAlignment="Top"/>
-        <Label Content="Unité" HorizontalAlignment="Left" Margin="154,320,0,0" VerticalAlignment="Top"/>
-        <Label Content="Quantité" HorizontalAlignment="Left" Margin="137,287,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="194,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <Label Content="Médicament" HorizontalAlignment="Left" Margin="118,153,0,0" VerticalAlignment="Top"/>
+        <Label Content="Posologie" HorizontalAlignment="Left" Margin="131,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="104,192,0,0" VerticalAlignment="Top"/>
         <Button Content="Ajouter" HorizontalAlignment="Left" Margin="193,371,0,0" VerticalAlignment="Top" Width="158" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White"/>
         <Button Content="Quitter" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
-        <Label Content="Code dose" HorizontalAlignment="Left" Margin="129,253,0,0" VerticalAlignment="Top"/>
-        <TextBox IsReadOnly="True" Background="DarkGray" Name="txtDosCode" HorizontalAlignment="Left" Height="23" Margin="194,256,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
 
     </Grid>
 </Window>

@@ -32,6 +32,6 @@
         <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnNewPre_Copy1" Content="Nouveau Médicament" Margin="611,31,233,0" VerticalAlignment="Top" Height="40" FontSize="13" Click="btnAjoutMed_Click" FontFamily="DejaVu Sans"/>
         <Button BorderBrush="#FFB1B1B1" Background="AliceBlue" x:Name="btnModifTn" Click="btnModifierTin_Click" Content="Modifier Type Individu" HorizontalAlignment="Left" Margin="397,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" FontFamily="DejaVu Sans"/>
         <Button BorderBrush="#FFB1B1B1" Background="AliceBlue" Name="btnModifMed" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="828,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13"  Click="btnModifierMed_Click" FontFamily="DejaVu Sans" Grid.ColumnSpan="2"/>
-        <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnAjtPerturbateur" Content="Ajouter Perturbateur" HorizontalAlignment="Left" Margin="228,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" FontFamily="DejaVu Sans" Grid.Column="1" RenderTransformOrigin="1,1"/>
+        <Button BorderBrush="#FF546B7F" Background="AliceBlue" x:Name="btnAjtPerturbateur" Content="Ajouter Perturbateur" HorizontalAlignment="Left" Margin="228,31,0,0" VerticalAlignment="Top" Width="180" Height="40" FontSize="13" FontFamily="DejaVu Sans" Grid.Column="1" RenderTransformOrigin="1,1" Click="btnAjtPerturbateur_Click"/>
     </Grid>
 </Window>

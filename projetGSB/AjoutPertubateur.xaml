@@ -1,0 +1,26 @@
+﻿<Window x:Class="projetGSB.AjoutPertubateur"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projetGSB"
+        mc:Ignorable="d"
+        Title="AjoutPertubateur" Height="450" Width="800">
+    <Grid Background="AliceBlue">
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,-1.4,0" VerticalAlignment="Top" Width="795" Opacity="0.7">
+            <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="4,-4,0,0">
+                <Image.Effect>
+                    <DropShadowEffect Opacity="0.4"/>
+                </Image.Effect>
+            </Image>
+        </GroupBox>
+
+        <Label Foreground="white" Content="Ajout Médicament pertubateur" HorizontalAlignment="Left" Margin="277,21,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light" Width="326"/>
+        <ListBox HorizontalAlignment="Left" Height="289" Margin="24,104,0,0" VerticalAlignment="Top" Width="236"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="530,104,0,0" VerticalAlignment="Top" Width="236"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="530,258,0,0" VerticalAlignment="Top" Width="236"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="384,330,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="1.103,1.85" Height="28"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="666,383,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Height="27"/>
+
+    </Grid>
+</Window>

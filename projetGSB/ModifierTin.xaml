@@ -19,7 +19,6 @@
         <Label Content="Libelle" HorizontalAlignment="Left" Margin="14,185,0,0" VerticalAlignment="Top"/>
         <TextBox Name="txtLibelle" HorizontalAlignment="Left" Height="23" Margin="71,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" />
         <Button Content="Enregistrer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Margin="71,230,0,0" Height="29" Foreground="White" Background="#FF0275D8" BorderBrush="#FF0275D8"/>
-        <Button Content="Supprimer" HorizontalAlignment="Left" Margin="278,369,0,0" VerticalAlignment="Top" Width="126" Height="29" Background="#FFD9534F" Foreground="White" BorderBrush="#FFD9534F"/>
         <ListBox Name="lstTin" HorizontalAlignment="Left" Height="198" Margin="241,130,0,0" VerticalAlignment="Top" Width="163"/>
         <Button Content="Quitter" HorizontalAlignment="Left" Margin="23,369,0,0" VerticalAlignment="Top" Width="76" Height="29" Foreground="White" Background="#FF292B2C"/>
 

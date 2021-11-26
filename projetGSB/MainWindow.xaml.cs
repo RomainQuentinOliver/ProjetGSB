@@ -61,5 +61,11 @@ namespace projetGSB
             AjouterPre ajtPre = new AjouterPre(gst);
             ajtPre.Show();
         }
+
+        private void btnAjtPerturbateur_Click(object sender, RoutedEventArgs e)
+        {
+            AjoutPertubateur  ajtPerturb = new AjoutPertubateur(gst);
+            ajtPerturb.Show();
+        }
     }
 }

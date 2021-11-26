@@ -30,8 +30,6 @@
         <TextBox Name="effet" HorizontalAlignment="Left" Height="91" Margin="318,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox Name="prixMed" HorizontalAlignment="Left" Height="23" Margin="88,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
         <Label Content="Prix échantillon" HorizontalAlignment="Left" Margin="89,237,0,0" VerticalAlignment="Top"/>
-        <Label Content="Médicament(s) perturbateur(s)" HorizontalAlignment="Left" Margin="541,121,0,0" VerticalAlignment="Top"/>
-        <ListBox Name="lstMedPerturbateur" HorizontalAlignment="Left" Height="229" Margin="541,150,0,0" VerticalAlignment="Top" Width="185"/>
 
         <Button Content="Quitter" HorizontalAlignment="Left" Margin="88,457,0,0" VerticalAlignment="Top" Width="75" Height="34" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
         <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="258,457,0,0" VerticalAlignment="Top" Width="267" Height="34" BorderBrush="#FF0275D8" Foreground="White"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="AjoutPre" Height="450" Width="450">
+        Title="AjoutPre" Height="450" Width="450" Loaded="Window_Loaded_New_Prescription">
     <Grid Background="AliceBlue">
         <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7">
             <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="4,-4,0,0">
@@ -20,7 +20,7 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="" Width="150"></TextBlock>
+                        <TextBlock Text="{Binding NomCommercialMed}" Width="150"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
@@ -29,17 +29,28 @@
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
-                        <TextBlock Text="" Width="150"></TextBlock>
+                        <TextBlock Text="{Binding LibelleTypeInd}" Width="150"></TextBlock>
                     </StackPanel>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="194,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="157"/>
+        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="194,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
         <Label Content="Médicament" HorizontalAlignment="Left" Margin="118,153,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posologie" HorizontalAlignment="Left" Margin="131,239,0,0" VerticalAlignment="Top"/>
+        <Label Content="Posologie" HorizontalAlignment="Left" Margin="131,273,0,0" VerticalAlignment="Top"/>
         <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="104,192,0,0" VerticalAlignment="Top"/>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="193,371,0,0" VerticalAlignment="Top" Width="158" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
+        <Label Content="Dosage" HorizontalAlignment="Left" Margin="136,232,0,0" VerticalAlignment="Top"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="193,371,0,0" VerticalAlignment="Top" Width="158" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Click="Ajouter_Click"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Quitter_Click"/>
+        <ComboBox x:Name="cboDosage" HorizontalAlignment="Left" Margin="195,236,0,0" VerticalAlignment="Top" Width="157">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding QuantiteDose}" Width="100"/>
+                        <TextBlock Text="{Binding UniteDose}" Width="50"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
     </Grid>
 </Window>

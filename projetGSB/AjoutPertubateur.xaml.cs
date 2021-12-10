@@ -24,6 +24,13 @@ namespace projetGSB
         {
             InitializeComponent();
         }
+        GstBDD gst; 
+
+        private void Window_Loaded_Ajout_Med_Perturbateur(object sender, RoutedEventArgs e)
+        {
+            gst = new GstBDD();
+            lst_Medicament.ItemsSource = gst.GetAllMedicaments(); 
+        }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {

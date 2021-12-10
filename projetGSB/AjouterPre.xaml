@@ -34,7 +34,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="194,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="194,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158" Background="#FF4E4E4E" BorderBrush="#FF4E4E4E" Foreground="White"/>
         <Label Content="Médicament" HorizontalAlignment="Left" Margin="118,153,0,0" VerticalAlignment="Top"/>
         <Label Content="Posologie" HorizontalAlignment="Left" Margin="131,273,0,0" VerticalAlignment="Top"/>
         <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="104,192,0,0" VerticalAlignment="Top"/>

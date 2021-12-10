@@ -77,5 +77,11 @@ namespace GstBdd
             cmd = new MySqlCommand("UPDATE type_individu SET TIN_LIBELLE = " + "'" + Libelle + "' WHERE TIN_CODE = " + codeTin, cnx);
             cmd.ExecuteNonQuery();
         }
+
+        public void AjouterTypeIndividu(string Libelle) // Oliver
+        {
+            cmd = new MySqlCommand("INSERT INTO type_individu VALUES (null,'" + Libelle + "')", cnx);
+            cmd.ExecuteNonQuery();
+        }
     }
 }

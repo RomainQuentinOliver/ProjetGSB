@@ -24,5 +24,39 @@ namespace projetGSB
         {
             InitializeComponent();
         }
+        GstBDD gst;
+
+        private void Button_Click(object sender,  RoutedEventArgs e)
+        {
+            string a = libelleTin.Text;
+            int b = 0;
+
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (Char.IsDigit(a[i]))
+                    b += 1;
+            }
+
+            if (libelleTin.Text == "")
+            {
+                MessageBox.Show("Veuillez rentrer un nouvel individu ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+            }
+
+            else if (b != 0)
+            {
+                MessageBox.Show("Veillez ne pas rentrer de chiffres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
+                this.Close();
+            }
+
+            else
+            {
+                gst = new GstBDD();
+                gst.AjouterTypeIndividu(libelleTin.Text);
+                MessageBox.Show("Individu ajouté", "Nouvel individu", MessageBoxButton.OK, MessageBoxImage.Information);
+                this.Close();
+            }
+
+        }
     }
 }

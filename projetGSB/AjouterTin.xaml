@@ -18,7 +18,7 @@
         <Label Foreground="white" Content="Nouveau Type d'individu" HorizontalAlignment="Left" Margin="142,21,-10,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light" Width="260"/>
         <Label Content="Libelle " HorizontalAlignment="Left" Margin="82,154,0,0" VerticalAlignment="Top" FontSize="14" Width="60"/>
         <TextBox Name="libelleTin" HorizontalAlignment="Left" Height="23" Margin="142,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161"/>
-        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="142,208,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.12,1.75" Height="28" BorderBrush="#FF0275D8" Foreground="White"/>
+        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="142,208,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.12,1.75" Height="28" BorderBrush="#FF0275D8" Foreground="White" Click="Button_Click"/>
         <Button Content="Quitter" HorizontalAlignment="Left" Margin="28,367,0,0" VerticalAlignment="Top" Width="90" Height="33" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
 
     </Grid>

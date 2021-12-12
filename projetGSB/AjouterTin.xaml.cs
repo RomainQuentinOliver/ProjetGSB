@@ -39,24 +39,28 @@ namespace projetGSB
 
             if (libelleTin.Text == "")
             {
-                MessageBox.Show("Veuillez rentrer un nouvel individu ", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
+                MessageBox.Show("Veuillez rentrer un nouveau type d'individu ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             else if (b != 0)
             {
-                MessageBox.Show("Veillez ne pas rentrer de chiffres", "Erreur", MessageBoxButton.OK, MessageBoxImage.Error);
-                this.Close();
+                MessageBox.Show("Veillez ne pas rentrer de chiffres", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             else
             {
                 gst = new GstBDD();
                 gst.AjouterTypeIndividu(libelleTin.Text);
-                MessageBox.Show("Individu ajouté", "Nouvel individu", MessageBoxButton.OK, MessageBoxImage.Information);
                 this.Close();
+                MessageBox.Show("Individu ajouté", "Nouveau type d'individu", MessageBoxButton.OK, MessageBoxImage.Information);
+                
             }
 
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            this.Close(); 
         }
     }
 }

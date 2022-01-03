@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using GstBdd;
+using Bibliothèque; 
 
 namespace projetGSB
 {
@@ -36,5 +37,6 @@ namespace projetGSB
         {
             this.Close(); 
         }
+
     }
 }

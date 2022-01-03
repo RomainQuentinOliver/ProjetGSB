@@ -15,8 +15,8 @@
             </Image>
         </GroupBox>
 
-        <Label Foreground="white" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="144,20,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light"/>
-        <ComboBox Name="cboMed" HorizontalAlignment="Left" Margin="195,157,0,0" VerticalAlignment="Top" Width="157">
+        <Label FontSize="20" Foreground="White" FontFamily="Lucida Calligraphy" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="144,20,0,0" VerticalAlignment="Top" />
+        <ComboBox Name="cboMed" HorizontalAlignment="Left" Margin="159,132,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -25,7 +25,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox Name="cboTin" HorizontalAlignment="Left" Margin="195,196,0,0" VerticalAlignment="Top" Width="157">
+        <ComboBox Name="cboTin" HorizontalAlignment="Left" Margin="159,171,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -34,14 +34,14 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="194,273,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <Label Content="Médicament" HorizontalAlignment="Left" Margin="118,153,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posologie" HorizontalAlignment="Left" Margin="131,273,0,0" VerticalAlignment="Top"/>
-        <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="104,192,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dosage" HorizontalAlignment="Left" Margin="136,232,0,0" VerticalAlignment="Top"/>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="193,371,0,0" VerticalAlignment="Top" Width="158" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Click="Ajouter_Click"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="30,371,0,0" VerticalAlignment="Top" Width="75" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Quitter_Click"/>
-        <ComboBox x:Name="cboDosage" HorizontalAlignment="Left" Margin="195,236,0,0" VerticalAlignment="Top" Width="157">
+        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="158,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <Label Content="Médicament" HorizontalAlignment="Left" Margin="82,128,0,0" VerticalAlignment="Top"/>
+        <Label Content="Posologie" HorizontalAlignment="Left" Margin="95,248,0,0" VerticalAlignment="Top"/>
+        <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="68,167,0,0" VerticalAlignment="Top"/>
+        <Label Content="Dosage" HorizontalAlignment="Left" Margin="100,207,0,0" VerticalAlignment="Top"/>
+        <Button Content="Ajouter" Margin="159,309,127.2,0" VerticalAlignment="Top" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Click="Ajouter_Click"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="353,371,0,0" VerticalAlignment="Top" Width="66" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Quitter_Click"/>
+        <ComboBox x:Name="cboDosage" HorizontalAlignment="Left" Margin="159,211,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">

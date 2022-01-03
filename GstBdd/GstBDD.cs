@@ -83,5 +83,16 @@ namespace GstBdd
             cmd = new MySqlCommand("INSERT INTO type_individu VALUES (null,'" + Libelle + "')", cnx);
             cmd.ExecuteNonQuery();
         }
+
+        public string GetNomFamilleByIdMed(int id)
+        {
+            cmd = new MySqlCommand("SELECT FAM_LIBELLE FROM famille WHERE FAM_CODE = (SELECT FAM_COD FROM medicament WHERE MED_DEPOTLEGAL = " + id + ")", cnx);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            string codeFamille = dr[0].ToString();
+            dr.Close(); 
+
+            return codeFamille; 
+        }
     }
 }

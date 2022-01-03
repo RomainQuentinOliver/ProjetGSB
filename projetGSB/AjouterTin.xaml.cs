@@ -39,12 +39,12 @@ namespace projetGSB
 
             if (libelleTin.Text == "")
             {
-                MessageBox.Show("Veuillez rentrer un nouveau type d'individu ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Veuillez entrer un nouveau type d'individu ", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             else if (b != 0)
             {
-                MessageBox.Show("Veillez ne pas rentrer de chiffres", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Carractères invalides", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
             }
 
             else

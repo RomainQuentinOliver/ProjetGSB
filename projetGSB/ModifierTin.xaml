@@ -7,19 +7,13 @@
         mc:Ignorable="d"
         Title="ModifierTin" Height="450" Width="450" Loaded="Window_Loaded_Modifier_Tin">
     <Grid Background="AliceBlue">
-        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7">
-            <Image Source="gsb.png" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="113">
-                <Image.Effect>
-                    <DropShadowEffect Opacity="0.4"/>
-                </Image.Effect>
-            </Image>
-        </GroupBox>
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7"/>
 
-        <Label Foreground="white" Content="Modifier un Type d'individu" HorizontalAlignment="Left" Margin="119,20,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light" Width="270"/>
-        <Label Content="Libelle" HorizontalAlignment="Left" Margin="14,185,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="txtLibelle" HorizontalAlignment="Left" Height="23" Margin="71,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" />
+        <Label Content="Modifier un Type d'individu" HorizontalAlignment="Left" Margin="119,23,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="Lucida Calligraphy" Width="286"/>
+        <Label FontSize="14" Content="Libelle" HorizontalAlignment="Left" Margin="71,156,0,0" VerticalAlignment="Top"/>
+        <TextBox FontSize="14" Name="txtLibelle" HorizontalAlignment="Left" Height="23" Margin="71,185,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" />
         <Button Content="Enregistrer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Margin="71,230,0,0" Height="29" Foreground="White" Background="#FF0275D8" BorderBrush="#FF0275D8" Click="Enregistrer_Click"/>
-        <ListBox Name="lstTin" HorizontalAlignment="Left" Height="198" Margin="241,130,0,0" VerticalAlignment="Top" Width="163" SelectionChanged="lstTin_SelectionChanged" Background="#FF4E4E4E" Foreground="White">
+        <ListBox FontSize="14" Name="lstTin" HorizontalAlignment="Left" Height="198" Margin="242,130,0,0" VerticalAlignment="Top" Width="163" SelectionChanged="lstTin_SelectionChanged" Background="#FF4E4E4E" Foreground="White">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -28,7 +22,12 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="23,369,0,0" VerticalAlignment="Top" Width="76" Height="29" Foreground="White" Background="#FF292B2C" Click="Quitter_Click"/>
+        <Button FontSize="14" Content="Quitter" HorizontalAlignment="Left" Margin="340,367,0,0" VerticalAlignment="Top" Width="65" Height="33" Foreground="White" Background="#FF292B2C" Click="Quitter_Click"/>
+        <Image Source="gsb.png" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="113" Margin="0,8,0,0">
+            <Image.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Image.Effect>
+        </Image>
 
     </Grid>
 </Window>

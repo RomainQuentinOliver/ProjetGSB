@@ -67,5 +67,11 @@ namespace projetGSB
             AjoutPertubateur  ajtPerturb = new AjoutPertubateur(gst);
             ajtPerturb.Show();
         }
+
+        private void btnInfoMed_Click(object sender, RoutedEventArgs e)
+        {
+            infoMedicament infoMed = new infoMedicament(gst);
+            infoMed.Show();
+        }
     }
 }

@@ -46,20 +46,32 @@ namespace projetGSB
         {
             if (lstTin.SelectedItem != null)
             {
-                if (txtLibelle.Text != "")
+                string LibelleTin = (lstTin.SelectedItem as TypeIndividu).LibelleTypeInd;
+
+                if (txtLibelle.Text != LibelleTin)
                 {
 
-                    int codeTin = (lstTin.SelectedItem as TypeIndividu).CodeTypeInd;
-                    string libelle = txtLibelle.Text;
-                    gst.UpdateTypeIndividu(libelle, codeTin);
-                    this.Close();
-                    MessageBox.Show("Le type d'individu à bien été mis à jour !");
+                
+                    if (txtLibelle.Text != "")
+                    {
 
+                        int codeTin = (lstTin.SelectedItem as TypeIndividu).CodeTypeInd;
+                        string libelle = txtLibelle.Text;
+                        gst.UpdateTypeIndividu(libelle, codeTin);
+                        this.Close();
+                        MessageBox.Show("Le type d'individu à bien été mis à jour !");
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veuillez saisir un type d'individu.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Veuillez saisir un type d'individu.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                    MessageBox.Show("Le type d'individu n'a pas été modifié.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
+
             }
             else
             {

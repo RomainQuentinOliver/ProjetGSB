@@ -46,5 +46,15 @@ namespace projetGSB
             }
                 
         }
+
+        private void lst_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void lst_non_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

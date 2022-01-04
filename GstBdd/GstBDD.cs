@@ -109,7 +109,7 @@ namespace GstBdd
             while (dr.Read())
             {
                 Famille codeF = new Famille(Convert.ToInt16(dr[2].ToString()), "test");
-                Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), codeF , dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString()));
+                Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), codeF, dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString()));
                 LesPertubateur.Add(inter);
             }
             dr.Close();

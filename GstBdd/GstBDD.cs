@@ -84,7 +84,7 @@ namespace GstBdd
             cmd.ExecuteNonQuery();
         }
 
-        public string GetNomFamilleByIdMed(int id)
+        public string GetNomFamilleByIdMed(int id) // Oliver
         {
             cmd = new MySqlCommand("SELECT FAM_LIBELLE FROM famille WHERE FAM_CODE = (SELECT FAM_COD FROM medicament WHERE MED_DEPOTLEGAL = " + id + ")", cnx);
             dr = cmd.ExecuteReader();

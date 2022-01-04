@@ -94,5 +94,36 @@ namespace GstBdd
 
             return codeFamille; 
         }
+
+        public void ModifierMedicament(int id, string nom, int famille, string composition, string effets, string contreindic, double prix) // Romain
+        {
+            cmd = new MySqlCommand("UPDATE medicament SET MED_NOMCOMMERCIAL = '" + nom + "', FAM_COD =" + famille + ", MED_COMPOSITION = '" + composition.Replace("'", "''") + "', MED_EFFETS = '" + effets.Replace("'", "''") + "', MED_CONTREINDIC = '" + contreindic.Replace("'", "''") + "', MED_PRIXECHANTILLON = " + prix + "  WHERE MED_DEPOTLEGAL = " + id, cnx);
+            cmd.ExecuteNonQuery();
+        }
+
+        public List<Famille> GetAllFamilles() // Romain
+        {
+            List<Famille> lesFamilles = new List<Famille>();
+            cmd = new MySqlCommand("SELECT FAM_CODE, FAM_LIBELLE FROM famille", cnx);
+            dr = cmd.ExecuteReader();
+
+            while (dr.Read())
+            {
+                Famille uneFamille = new Famille(Convert.ToInt16(dr[0].ToString()), dr[1].ToString());
+                lesFamilles.Add(uneFamille);
+            }
+            dr.Close();
+            return lesFamilles;
+        }
+
+        public int GetIdFamille(string famille) // Romain
+        {
+            cmd = new MySqlCommand("SELECT FAM_CODE FROM famille WHERE FAM_LIBELLE ='" + famille + "'", cnx);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            int idFamille = Convert.ToInt16(dr[0].ToString());
+            dr.Close();
+            return idFamille;
+        }
     }
 }

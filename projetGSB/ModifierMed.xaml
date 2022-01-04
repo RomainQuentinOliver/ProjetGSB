@@ -5,11 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="modifierMed" Height="550" Width="1000">
+        Title="modifierMed" Height="550" Width="1000" Loaded="Window_Loaded">
     <Grid Background="AliceBlue">
         <Label Content="Famille " HorizontalAlignment="Left" Margin="77,126,0,0" VerticalAlignment="Top" FontSize="14"/>
 
-        <ComboBox  Name="cboFamille" HorizontalAlignment="Left" Margin="77,155,0,0" VerticalAlignment="Top" Width="150" BorderBrush="#FF292B2C"/>
+        <ComboBox  Name="cboFamille" HorizontalAlignment="Left" Margin="77,155,0,0" VerticalAlignment="Top" Width="150" BorderBrush="#FF292B2C">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LibelleFamille}" Width="150"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
 
         <TextBox HorizontalAlignment="Left" Height="53" Margin="77,334,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <TextBox Name="txtnomMed" HorizontalAlignment="Left" Height="23" Margin="77,205,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
@@ -24,11 +32,18 @@
         <Label Content="Prix échantillon" HorizontalAlignment="Left" Margin="77,242,0,0" VerticalAlignment="Top"/>
 
         <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="992" Opacity="0.7">
-            <Button Content="Quitter" HorizontalAlignment="Left" Margin="74,443,0,-410.6" VerticalAlignment="Top" Width="86" Height="34" Foreground="#FFEBEBEB" BorderBrush="#FF292B2C" Background="#FF292B2C"/>
+            <Button Content="Quitter" HorizontalAlignment="Left" Margin="74,443,0,-410.6" VerticalAlignment="Top" Width="86" Height="34" Foreground="#FFEBEBEB" BorderBrush="#FF292B2C" Background="#FF292B2C" Click="QuitterModif_Click"/>
         </GroupBox>
         <Label Foreground="white" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="414,24,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light"/>
-        <Button Background="#FF0275D8" Content="Enregistrer" HorizontalAlignment="Left" Margin="219,451,0,0" VerticalAlignment="Top" Width="327" Height="33" BorderBrush="#FF0275D8" Foreground="White"/>
-        <ListBox Name="lstMedicamentModif" HorizontalAlignment="Left" Height="364" Margin="738,129,0,0" VerticalAlignment="Top" Width="220"/>
-
+        <Button Background="#FF0275D8" Content="Enregistrer" HorizontalAlignment="Left" Margin="219,451,0,0" VerticalAlignment="Top" Width="327" Height="33" BorderBrush="#FF0275D8" Foreground="White" Click="EnregistrerModif_Click"/>
+        <ListBox x:Name="lstMedicamentModif" SelectionChanged="lstMedicamentModif_SelectionChanged" HorizontalAlignment="Left" Height="364" Margin="738,129,0,0" VerticalAlignment="Top" Width="220">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding NomCommercialMed}" Width="200"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

@@ -7,19 +7,18 @@
         mc:Ignorable="d"
         Title="AjouterTin" Height="450" Width="450">
     <Grid  Background="AliceBlue">
-        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7">
-            <Image Source="gsb.png" HorizontalAlignment="Left" Height="69" VerticalAlignment="Top" Width="117" Margin="8,-4,0,0">
-                <Image.Effect>
-                    <DropShadowEffect Opacity="0.4"/>
-                </Image.Effect>
-            </Image>
-        </GroupBox>
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7"/>
 
-        <Label Foreground="white" Content="Nouveau Type d'individu" HorizontalAlignment="Left" Margin="142,21,-10,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light" Width="260"/>
-        <Label Content="Libelle " HorizontalAlignment="Left" Margin="82,154,0,0" VerticalAlignment="Top" FontSize="14" Width="60"/>
-        <TextBox Name="libelleTin" HorizontalAlignment="Left" Height="23" Margin="142,160,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161"/>
-        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="142,208,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.12,1.75" Height="28" BorderBrush="#FF0275D8" Foreground="White" Click="Button_Click"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="28,367,0,0" VerticalAlignment="Top" Width="90" Height="33" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Button_Click_1"/>
+        <Label Foreground="white" Content="Nouveau Type d'individu" HorizontalAlignment="Left" Margin="128,23,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Lucida Calligraphy" Width="288"/>
+        <Label  FontFamily="Verdana Pro Light" Content="Libelle " HorizontalAlignment="Left" Margin="146,154,0,0" VerticalAlignment="Top" FontSize="14" Width="60"/>
+        <TextBox FontSize="14" FontFamily="Verdana Pro Light" Name="libelleTin" HorizontalAlignment="Left" Height="23" Margin="149,183,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="161"/>
+        <Button FontSize="13" FontFamily="Verdana Pro Light" Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="149,231,0,0" VerticalAlignment="Top" Width="161" RenderTransformOrigin="0.12,1.75" Height="28" BorderBrush="#FF0275D8" Foreground="White" Click="Button_Click"/>
+        <Button FontFamily="Verdana Pro Light" Content="Quitter" HorizontalAlignment="Left" Margin="328,370,0,0" VerticalAlignment="Top" Width="88" Height="27" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Button_Click_1"/>
+        <Image Source="gsb.png" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="113" Margin="10,10,0,0">
+            <Image.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Image.Effect>
+        </Image>
 
     </Grid>
 </Window>

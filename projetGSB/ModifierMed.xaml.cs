@@ -36,28 +36,18 @@ namespace projetGSB
 
         private void lstMedicamentModif_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            gst = new GstBDD();
             cboFamille.ItemsSource = gst.GetAllFamilles();
             txtnomMed.Text = (lstMedicamentModif.SelectedItem as Medicament).NomCommercialMed;
+            txt_nomFam.Text = gst.GetNomFamilleByIdMed((lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed);
             txtprixMed.Text = (lstMedicamentModif.SelectedItem as Medicament).PrixEchantillonMed.ToString();
             txtcomposition.Text = (lstMedicamentModif.SelectedItem as Medicament).CompositionMed;
             txteffet.Text = (lstMedicamentModif.SelectedItem as Medicament).EffetsMed;
-            txtcontreindic.Text = (lstMedicamentModif.SelectedItem as Medicament).ContreIndicMed;
-
-        }
-
-        private void QuitterModif_Click(object sender, RoutedEventArgs e)
-        {
-            //MessageBox.Show((cboFamille.SelectedItem as Famille).LibelleFamille);
-
-            this.Close();
+            txtcontreindic.Text = (lstMedicamentModif.SelectedItem as Medicament).ContreIndicMed;       
         }
 
         private void EnregistrerModif_Click(object sender, RoutedEventArgs e)
         {
-            gst = new GstBDD();
-
-            if (cboFamille.SelectedItem != null)
+            if (lstMedicamentModif.SelectedItem != null)
             {
                 if (txtnomMed.Text != "")
                 {
@@ -69,19 +59,34 @@ namespace projetGSB
                             {
                                 if (txtcontreindic.Text != "")
                                 {
-                                    int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
-                                    string nom = txtnomMed.Text;
+                                    if (cboFamille.SelectedItem != null)
+                                    {
+                                        int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
+                                        string nom = txtnomMed.Text;
+                                        int famille = gst.GetIdFamille((cboFamille.SelectedItem as Famille).LibelleFamille);
+                                        string composition = txtcomposition.Text;
+                                        string effets = txteffet.Text;
+                                        string contreindic = txtcontreindic.Text;
+                                        double prix = Convert.ToDouble(txtprixMed.Text);
 
-                                    int famille = gst.GetIdFamille((cboFamille.SelectedItem as Famille).LibelleFamille);
+                                        gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
+                                        this.Close();
+                                        MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
+                                    }
+                                    else
+                                    {                                        
+                                        int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
+                                        string nom = txtnomMed.Text;
+                                        int famille = gst.GetIdFamille(txt_nomFam.Text);
+                                        string composition = txtcomposition.Text;
+                                        string effets = txteffet.Text;
+                                        string contreindic = txtcontreindic.Text;
+                                        double prix = Convert.ToDouble(txtprixMed.Text);
 
-                                    string composition = txtcomposition.Text;
-                                    string effets = txteffet.Text;
-                                    string contreindic = txtcontreindic.Text;
-                                    double prix = (lstMedicamentModif.SelectedItem as Medicament).PrixEchantillonMed;
-
-                                    gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
-                                    this.Close();
-                                    MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
+                                        gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
+                                        this.Close();
+                                        MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
+                                    }                
                                 }
                                 else
                                 {
@@ -110,8 +115,14 @@ namespace projetGSB
             }
             else
             {
-                MessageBox.Show("Veuillez saisir une famille", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Veuillez sélectionner un medicament", "Erreur de sélection", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

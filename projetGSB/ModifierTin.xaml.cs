@@ -50,8 +50,7 @@ namespace projetGSB
 
                 if (txtLibelle.Text != LibelleTin)
                 {
-
-                
+       
                     if (txtLibelle.Text != "")
                     {
 

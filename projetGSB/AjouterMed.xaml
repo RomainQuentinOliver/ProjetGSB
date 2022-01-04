@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="AjouterMed" Height="450" Width="800">
+        Title="AjouterMed" Height="550" Width="800" Loaded="Window_Loaded_Ajout_Med">
     <Grid  Background="AliceBlue">
-        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="792" Opacity="0.7">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="267*"/>
+            <RowDefinition Height="254*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="603*"/>
+            <ColumnDefinition Width="191*"/>
+        </Grid.ColumnDefinitions>
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="792" Opacity="0.7" Grid.ColumnSpan="2">
             <Image Source="gsb.png" HorizontalAlignment="Left" Height="72" VerticalAlignment="Top" Width="124" Margin="8,-4,0,-2">
                 <Image.Effect>
                     <DropShadowEffect Opacity="0.4"/>
@@ -18,21 +26,29 @@
         <Label Foreground="white" Content="Nouveau Médicament" HorizontalAlignment="Left" Margin="268,24,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light"/>
         <Label Content="Famille " HorizontalAlignment="Left" Margin="89,121,0,0" VerticalAlignment="Top" FontSize="14"/>
 
-        <ComboBox Name="cboFamille" HorizontalAlignment="Left" Margin="89,150,0,0" VerticalAlignment="Top" Width="150"/>
-        <TextBox HorizontalAlignment="Left" Height="53" Margin="89,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox Name="nomMed" HorizontalAlignment="Left" Height="23" Margin="89,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <ComboBox Name="cboFamille" HorizontalAlignment="Left" Margin="89,150,0,0" VerticalAlignment="Top" Width="180">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LibelleFamille}" Width="150"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox HorizontalAlignment="Left" Height="53" Margin="89,62.053,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Grid.Row="1"/>
+        <TextBox Name="nomMed" HorizontalAlignment="Left" Height="23" Margin="89,200,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" />
         <Label Content="Nom" HorizontalAlignment="Left" Margin="89,172,0,0" VerticalAlignment="Top"/>
-        <Label Content="Composition" HorizontalAlignment="Left" Margin="89,300,0,0" VerticalAlignment="Top"/>
+        <Label Content="Composition" HorizontalAlignment="Left" Margin="89,33.053,0,0" VerticalAlignment="Top" Grid.Row="1"/>
         <Label Content="Effets" HorizontalAlignment="Left" Margin="318,124,0,0" VerticalAlignment="Top"/>
-        <Label Content="Contre Indications" HorizontalAlignment="Left" Margin="318,250,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="composition" HorizontalAlignment="Left" Height="53" Margin="89,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox Name="contreindic" HorizontalAlignment="Left" Height="100" Margin="318,281,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
+        <Label Content="Contre Indications" HorizontalAlignment="Left" Margin="318,250,0,0" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <TextBox Name="composition" HorizontalAlignment="Left" Height="53" Margin="89,62.053,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Grid.Row="1"/>
+        <TextBox Name="contreindic" HorizontalAlignment="Left" Height="100" Margin="318,14.053,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Grid.Row="1"/>
         <TextBox Name="effet" HorizontalAlignment="Left" Height="91" Margin="318,150,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <TextBox Name="prixMed" HorizontalAlignment="Left" Height="23" Margin="88,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
+        <TextBox Name="prixMed" HorizontalAlignment="Left" Height="23" Margin="88,1.053,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Grid.Row="1"/>
         <Label Content="Prix échantillon" HorizontalAlignment="Left" Margin="89,237,0,0" VerticalAlignment="Top"/>
 
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="88,457,0,0" VerticalAlignment="Top" Width="75" Height="34" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
-        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="258,457,0,0" VerticalAlignment="Top" Width="267" Height="34" BorderBrush="#FF0275D8" Foreground="White"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="88,190.053,0,0" VerticalAlignment="Top" Width="75" Height="34" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Grid.Row="1" Click="Quitte_Click"/>
+        <Button Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="258,190.053,0,0" VerticalAlignment="Top" Width="267" Height="34" BorderBrush="#FF0275D8" Foreground="White" Grid.Row="1" Click="Button_Click"/>
 
     </Grid>
 </Window>

@@ -29,7 +29,7 @@
             </GroupBox>
 
             <Label Foreground="white" Content="Ajout Médicament pertubateur" HorizontalAlignment="Left" Margin="277,21,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Verdana Pro Light" Width="326"/>
-            <ListBox x:Name="lst_Medicament" HorizontalAlignment="Left" Height="289" Margin="24,104,0,0" VerticalAlignment="Top" Width="236" Background="#FF4E4E4E" Foreground="White">
+            <ListBox x:Name="lst_Medicament" SelectionChanged="lst_Medicament_Selection" HorizontalAlignment="Left" Height="289" Margin="24,104,0,0" VerticalAlignment="Top" Width="236" Background="#FF4E4E4E" Foreground="White">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -38,8 +38,16 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox HorizontalAlignment="Left" Height="100" Margin="530,118,0,0" VerticalAlignment="Top" Width="236" Background="#FFBABABA"/>
-            <ListBox HorizontalAlignment="Left" Height="100" Margin="530,258,0,0" VerticalAlignment="Top" Width="236" Background="#FFBDBDBD"/>
+            <ListBox Name="lst_perturbateur" HorizontalAlignment="Left" Height="100" Margin="530,118,0,0" VerticalAlignment="Top" Width="236" Background="#FFBABABA">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NomCommercialMed}" Width="200"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox Name="lst_non_perturbateur" HorizontalAlignment="Left" Height="100" Margin="530,258,0,0" VerticalAlignment="Top" Width="236" Background="#FFBDBDBD"/>
             <Button Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Content="Ajouter" HorizontalAlignment="Left" Margin="530,369,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="1.103,1.85" Height="28"/>
             <Button Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Content="Quitter" HorizontalAlignment="Left" Margin="666,398,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Height="27"/>
             <Label Content="Perturbateur" HorizontalAlignment="Left" Margin="530,86,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>

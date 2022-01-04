@@ -1,10 +1,11 @@
-﻿using MySql.Data.MySqlClient;
+﻿//using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Bibliothèque;
+using MySqlConnector;
 
 namespace GstBdd
 {
@@ -76,6 +77,43 @@ namespace GstBdd
         {
             cmd = new MySqlCommand("UPDATE type_individu SET TIN_LIBELLE = " + "'" + Libelle + "' WHERE TIN_CODE = " + codeTin, cnx);
             cmd.ExecuteNonQuery();
+        }
+
+        public List<Famille> GetAllFamille() // Quentin
+        {
+            List<Famille> LesFamille = new List<Famille>();
+            cmd = new MySqlCommand("SELECT FAM_CODE ,FAM_LIBELLE FROM famille", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Famille codeF = new Famille(Convert.ToInt16(dr[0].ToString()),dr[1].ToString());
+                LesFamille.Add(codeF);
+            }
+            dr.Close();
+            return LesFamille;
+        }
+        public void AjoutMed(string nom, int famCode, decimal prix, string comp,string effet_med, string contre) // Quentin
+        {
+
+            double p = Convert.ToDouble(prix.ToString().Replace('.','.'));
+
+            cmd = new MySqlCommand("INSERT INTO medicament vALUES(null,'" + nom + "'," + famCode + ",'" + comp + "','" + effet_med + "','" + contre + "'," + p + ")", cnx);
+            cmd.ExecuteNonQuery();
+        }
+
+        public List<Medicament> GetAllPertubateur(int num) // Quentin
+        {
+            List<Medicament> LesPertubateur = new List<Medicament>();
+            cmd = new MySqlCommand("SELECT MED_PERTURBATEUR, MED_NOMCOMMERCIAL, FAM_COD, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_CONTREINDIC FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_MED_PERTURBE =" + num +" GROUP BY MED_PERTURBATEUR ", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Famille codeF = new Famille(Convert.ToInt16(dr[2].ToString()), "test");
+                Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), codeF , dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString()));
+                LesPertubateur.Add(inter);
+            }
+            dr.Close();
+            return LesPertubateur;
         }
     }
 }

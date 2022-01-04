@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Bibliothèque;
 using GstBdd;
 
 namespace projetGSB
@@ -29,12 +30,21 @@ namespace projetGSB
         private void Window_Loaded_Ajout_Med_Perturbateur(object sender, RoutedEventArgs e)
         {
             gst = new GstBDD();
-            lst_Medicament.ItemsSource = gst.GetAllMedicaments(); 
+            lst_Medicament.ItemsSource = gst.GetAllMedicaments();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             this.Close(); 
+        }
+
+        private void lst_Medicament_Selection(object sender, SelectionChangedEventArgs e)
+        {
+            if (lst_Medicament.SelectedItem != null)
+            {
+                lst_perturbateur.ItemsSource = gst.GetAllPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+            }
+                
         }
     }
 }

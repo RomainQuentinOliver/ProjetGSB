@@ -7,16 +7,10 @@
         mc:Ignorable="d"
         Title="AjoutPre" Height="450" Width="450" Loaded="Window_Loaded_New_Prescription">
     <Grid Background="AliceBlue">
-        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7">
-            <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="4,-4,0,0">
-                <Image.Effect>
-                    <DropShadowEffect Opacity="0.4"/>
-                </Image.Effect>
-            </Image>
-        </GroupBox>
+        <GroupBox Background="#5E8BB8" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7"/>
 
         <Label FontSize="20" Foreground="White" FontFamily="Lucida Calligraphy" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="144,20,0,0" VerticalAlignment="Top" />
-        <ComboBox Name="cboMed" HorizontalAlignment="Left" Margin="159,132,0,0" VerticalAlignment="Top" Width="157">
+        <ComboBox FontFamily="Verdana Pro Light" FontSize="14" Name="cboMed" HorizontalAlignment="Left" Margin="55,143,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -25,7 +19,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox Name="cboTin" HorizontalAlignment="Left" Margin="159,171,0,0" VerticalAlignment="Top" Width="157">
+        <ComboBox FontFamily="Verdana Pro Light" FontSize="14" Name="cboTin" HorizontalAlignment="Left" Margin="233,143,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -34,14 +28,14 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="158,247,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
-        <Label Content="Médicament" HorizontalAlignment="Left" Margin="82,128,0,0" VerticalAlignment="Top"/>
-        <Label Content="Posologie" HorizontalAlignment="Left" Margin="95,248,0,0" VerticalAlignment="Top"/>
-        <Label Content="Type d'individu" HorizontalAlignment="Left" Margin="68,167,0,0" VerticalAlignment="Top"/>
-        <Label Content="Dosage" HorizontalAlignment="Left" Margin="100,207,0,0" VerticalAlignment="Top"/>
-        <Button Content="Ajouter" Margin="159,309,127.2,0" VerticalAlignment="Top" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Click="Ajouter_Click"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="353,371,0,0" VerticalAlignment="Top" Width="66" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Quitter_Click"/>
-        <ComboBox x:Name="cboDosage" HorizontalAlignment="Left" Margin="159,211,0,0" VerticalAlignment="Top" Width="157">
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txtPosologie" HorizontalAlignment="Left" Height="23" Margin="233,220,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="158"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Médicament" HorizontalAlignment="Left" Margin="55,116,0,0" VerticalAlignment="Top"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Posologie" HorizontalAlignment="Left" Margin="233,192,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.696,0.728"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Type d'individu" HorizontalAlignment="Left" Margin="233,116,0,0" VerticalAlignment="Top"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Dosage" HorizontalAlignment="Left" Margin="55,192,0,0" VerticalAlignment="Top"/>
+        <Button FontFamily="Verdana Pro Light" FontSize="14" Content="Ajouter" Margin="144,285,142.2,0" VerticalAlignment="Top" Height="28" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Click="Ajouter_Click"/>
+        <Button FontFamily="Verdana Pro Light" FontSize="14" Content="Quitter" HorizontalAlignment="Left" Margin="353,371,0,0" VerticalAlignment="Top" Width="66" Height="28" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Quitter_Click"/>
+        <ComboBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="cboDosage" HorizontalAlignment="Left" Margin="55,220,0,0" VerticalAlignment="Top" Width="157">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -51,6 +45,11 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
+        <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="4,1,0,0">
+            <Image.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Image.Effect>
+        </Image>
 
     </Grid>
 </Window>

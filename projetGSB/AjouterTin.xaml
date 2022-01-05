@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="AjouterTin" Height="450" Width="450">
     <Grid  Background="AliceBlue">
-        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7"/>
+        <GroupBox Background="#5F8DB8" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7"/>
 
         <Label Foreground="white" Content="Nouveau Type d'individu" HorizontalAlignment="Left" Margin="128,23,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Lucida Calligraphy" Width="288"/>
         <Label  FontFamily="Verdana Pro Light" Content="Libelle " HorizontalAlignment="Left" Margin="146,154,0,0" VerticalAlignment="Top" FontSize="14" Width="60"/>

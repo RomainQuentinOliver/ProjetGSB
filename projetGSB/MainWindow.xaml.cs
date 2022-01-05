@@ -31,6 +31,7 @@ namespace projetGSB
         private void Window_Loaded_accueil(object sender, RoutedEventArgs e)
         {
             gst = new GstBDD();
+            lst_Medicament.ItemsSource = gst.GetAllMedicaments();
         }
         private void btnAjouTin_Click(object sender, RoutedEventArgs e)
         {
@@ -43,7 +44,19 @@ namespace projetGSB
             ModifierTin modifTin = new ModifierTin(gst);
             modifTin.Show();
         }
-
+        private void lst_Medicament_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (lst_Medicament.SelectedItem != null)
+            {
+                txt_nomCommercial.Text = (lst_Medicament.SelectedItem as Medicament).NomCommercialMed;
+                int depotLegal = (lst_Medicament.SelectedItem as Medicament).DepotLegalMed;
+                txt_famille.Text = gst.GetNomFamilleByIdMed(depotLegal);
+                txt_composition.Text = (lst_Medicament.SelectedItem as Medicament).CompositionMed;
+                txt_effets.Text = (lst_Medicament.SelectedItem as Medicament).EffetsMed;
+                txt_contreIndic.Text = (lst_Medicament.SelectedItem as Medicament).ContreIndicMed;
+                txt_prix.Text = (lst_Medicament.SelectedItem as Medicament).PrixEchantillonMed.ToString();
+            }
+        }
         private void btnAjoutMed_Click(object sender, RoutedEventArgs e)
         {
             AjouterMed ajtMed = new AjouterMed(gst);
@@ -68,10 +81,5 @@ namespace projetGSB
             ajtPerturb.Show();
         }
 
-        private void btnInfoMed_Click(object sender, RoutedEventArgs e)
-        {
-            infoMedicament infoMed = new infoMedicament(gst);
-            infoMed.Show();
-        }
     }
 }

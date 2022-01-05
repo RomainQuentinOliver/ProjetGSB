@@ -43,16 +43,48 @@ namespace projetGSB
             if (lst_Medicament.SelectedItem != null)
             {
                 lst_perturbateur.ItemsSource = gst.GetAllPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+                lst_non_perturbateur.ItemsSource = gst.GetAllNonPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
             }
                 
         }
 
-        private void lst_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            if(lst_Medicament.SelectedItem == null)
+            {
+                MessageBox.Show("Veuillez choisir un médicament.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            else
+            {
+                if(lst_non_perturbateur.SelectedItem == null)
+                {
+                    MessageBox.Show("Veuillez choisir un nouveaux pertubateur.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+                else
+                {
+                    int pertubateur = (lst_non_perturbateur.SelectedItem as Medicament).DepotLegalMed;
+                    int pertube = (lst_Medicament.SelectedItem as Medicament).DepotLegalMed;
+                    if(pertube == pertubateur)
+                    {
+                        MessageBox.Show("Veuillez choisir un nouveaux pertubateur.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+                    else
+                    {
+                        gst.AjoutPertubateur(pertubateur, pertube);
+                        MessageBox.Show("Le pertubateur a bien été créé.");
+                        this.Close();
+                    }
+                    
+                }
+            }
+        }
+
+        private void lst_non_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }
 
-        private void lst_non_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void lst_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="infoMedicament" Height="680" Width="1000" Loaded="Window_Loaded_InfoMed">
+        Title="infoMedicament" Height="720" Width="1280" Loaded="Window_Loaded_InfoMed">
     <Grid Background="AliceBlue">
-        <ListBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="lst_Medicament" HorizontalAlignment="Left" Height="275" Margin="38,102,0,0" VerticalAlignment="Top" Width="202" Background="#FF292B2C" BorderBrush="#FF292B2C"  Foreground="White" SelectionChanged="lst_Medicament_SelectionChanged">
+        <ListBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="lst_Medicament" HorizontalAlignment="Left" Height="277" Margin="33,169,0,0" VerticalAlignment="Top" Width="202" Background="#FF292B2C" BorderBrush="#FF292B2C"  Foreground="White" SelectionChanged="lst_Medicament_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -16,13 +16,13 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_nomCommercial" HorizontalAlignment="Left" Height="23" Margin="278,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" IsEnabled="False" Background="Black" Foreground="White"/>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_effets" HorizontalAlignment="Left" Height="203" Margin="620,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" RenderTransformOrigin="1.117,0.87" IsEnabled="False" Foreground="White" Background="Black"/>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_contreIndic" HorizontalAlignment="Left" Height="206" Margin="277,419,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" IsEnabled="False" Foreground="White" Background="Black"/>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_composition" HorizontalAlignment="Left" Height="203" Margin="277,174,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="300" RenderTransformOrigin="1.472,2.614" IsEnabled="False" Background="Black" Foreground="White"/>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_famille" HorizontalAlignment="Left" Height="23" Margin="620,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" IsEnabled="False" Background="Black" Foreground="White"/>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_prix" HorizontalAlignment="Left" Height="23" Margin="620,428,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" IsEnabled="False" Background="Black" Foreground="White"/>
-        <GroupBox Background="#FF292B2C" Header="" HorizontalAlignment="Left" Height="90" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="994" Opacity="0.7">
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_nomCommercial" HorizontalAlignment="Left" Height="23" Margin="278,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="164" IsEnabled="False" Background="Black" Foreground="White"/>
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_effets" HorizontalAlignment="Left" Height="407" Margin="877,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="359" RenderTransformOrigin="1.117,0.87" IsEnabled="False" Foreground="White" Background="Black"/>
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_contreIndic" HorizontalAlignment="Left" Height="191" Margin="273,468,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" IsEnabled="False" Foreground="White" Background="Black"/>
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_composition" HorizontalAlignment="Left" Height="166" Margin="274,250,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="587" RenderTransformOrigin="1.472,2.614" IsEnabled="False" Background="Black" Foreground="White"/>
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_famille" HorizontalAlignment="Left" Height="23" Margin="501,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="166" IsEnabled="False" Background="Black" Foreground="White"/>
+        <TextBox FontFamily="Verdana Pro Light" FontSize="14" Name="txt_prix" HorizontalAlignment="Left" Height="23" Margin="717,175,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="143" IsEnabled="False" Background="Black" Foreground="White"/>
+        <GroupBox Background="#FF292B2C" Header="" HorizontalAlignment="Left" Height="90" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.2" Direction="300"/>
             </GroupBox.Effect>
@@ -32,14 +32,14 @@
                 <DropShadowEffect Opacity="0.4"/>
             </Image.Effect>
         </Image>
-        <Label Content="Information médicaments" HorizontalAlignment="Left" Margin="328,16,0,0" VerticalAlignment="Top" FontSize="28" Foreground="White" FontFamily="Lucida Calligraphy" Height="53" Width="423"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Contre-indications" HorizontalAlignment="Left" Margin="277,387,0,0" VerticalAlignment="Top"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Famille" HorizontalAlignment="Left" Margin="620,90,0,0" VerticalAlignment="Top"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Nom commercial" HorizontalAlignment="Left" Margin="277,90,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Prix échantillon en €" HorizontalAlignment="Left" Margin="619,396,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.805,0.717"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Effets" HorizontalAlignment="Left" Margin="620,144,0,0" VerticalAlignment="Top"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Composition" HorizontalAlignment="Left" Margin="277,144,0,0" VerticalAlignment="Top"/>
-        <Button Background="#FF292B2C" Foreground="White" Content="Quitter" HorizontalAlignment="Left" Margin="840,586,0,0" VerticalAlignment="Top" Width="86" Height="28" Click="Button_Click"/>
+        <Label Content="Information médicaments" HorizontalAlignment="Left" Margin="438,14,0,0" VerticalAlignment="Top" FontSize="28" Foreground="White" FontFamily="Lucida Calligraphy" Height="53" Width="423"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Contre-indications" HorizontalAlignment="Left" Margin="276,441,0,0" VerticalAlignment="Top"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Famille" HorizontalAlignment="Left" Margin="501,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.007,0.566"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Nom commercial" HorizontalAlignment="Left" Margin="276,148,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Prix échantillon en €" HorizontalAlignment="Left" Margin="717,150,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.805,0.717"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Effets" HorizontalAlignment="Left" Margin="877,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.009,-0.007"/>
+        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Composition" HorizontalAlignment="Left" Margin="276,223,0,0" VerticalAlignment="Top"/>
+        <Button Background="#FF292B2C" Foreground="White" Content="Quitter" HorizontalAlignment="Left" Margin="33,622,0,0" VerticalAlignment="Top" Width="106" Height="35" Click="Button_Click"/>
 
     </Grid>
 </Window>

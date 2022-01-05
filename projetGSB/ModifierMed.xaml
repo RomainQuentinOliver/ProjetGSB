@@ -5,11 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="modifierMed" Height="550" Width="1000" Loaded="Window_Loaded">
+        Title="modifierMed" Height="720" Width="1280" Loaded="Window_Loaded">
     <Grid Background="AliceBlue">
-        <Label FontFamily="Verdana Pro Light" Content="Famille " HorizontalAlignment="Left" Margin="76,103,0,0" VerticalAlignment="Top" FontSize="14"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="82*"/>
+        </Grid.RowDefinitions>
+        <Label FontFamily="Verdana Pro Light" Content="Famille " HorizontalAlignment="Left" Margin="55,129,0,0" VerticalAlignment="Top" FontSize="14"/>
 
-        <ComboBox FontSize="14" FontFamily="Verdana Pro Light"  Name="cboFamille" HorizontalAlignment="Left" Margin="76,132,0,0" VerticalAlignment="Top" Width="150" BorderBrush="#FF292B2C">
+        <ComboBox FontSize="14" FontFamily="Verdana Pro Light"  Name="cboFamille" HorizontalAlignment="Left" Margin="55,158,0,0" VerticalAlignment="Top" Width="150" BorderBrush="#FF292B2C" RenderTransformOrigin="0.461,1.06">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -18,21 +22,21 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox FontSize="14" Name="txtnomMed" HorizontalAlignment="Left" Height="23" Margin="77,206,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
-        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Nom" HorizontalAlignment="Left" Margin="77,181,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Composition" HorizontalAlignment="Left" Margin="77,291,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Effets indésirables" HorizontalAlignment="Left" Margin="393,103,0,0" VerticalAlignment="Top"/>
-        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Contre Indications" HorizontalAlignment="Left" Margin="393,290,0,0" VerticalAlignment="Top"/>
-        <TextBox FontSize="14" Name="txtcomposition" HorizontalAlignment="Left" Height="122" Margin="77,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="267"/>
-        <TextBox FontSize="14" Name="txtcontreindic" HorizontalAlignment="Left" Height="122" Margin="393,317,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
-        <TextBox FontSize="14" Name="txteffet" HorizontalAlignment="Left" Height="131" Margin="393,132,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="271"/>
-        <TextBox FontSize="14" Name="txtprixMed" HorizontalAlignment="Left" Height="23" Margin="77,258,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
-        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Prix échantillon" HorizontalAlignment="Left" Margin="76,233,0,0" VerticalAlignment="Top"/>
+        <TextBox FontSize="14" Name="txtnomMed" HorizontalAlignment="Left" Height="22" Margin="56,35.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182" Grid.Row="1"/>
+        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Nom" HorizontalAlignment="Left" Margin="56,9.6,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Composition" HorizontalAlignment="Left" Margin="55,167.7,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Effets indésirables" HorizontalAlignment="Left" Margin="512,126,0,0" VerticalAlignment="Top"/>
+        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Contre Indications" HorizontalAlignment="Left" Margin="512,172.7,0,0" VerticalAlignment="Top" Grid.Row="1"/>
+        <TextBox FontSize="14" Name="txtcomposition" HorizontalAlignment="Left" Height="198" Margin="55,199.7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="429" Grid.Row="1"/>
+        <TextBox FontSize="14" Name="txtcontreindic" HorizontalAlignment="Left" Height="198" Margin="512,199.7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470" Grid.Row="1"/>
+        <TextBox FontSize="14" Name="txteffet" HorizontalAlignment="Left" Height="206" Margin="512,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="470" Grid.RowSpan="2"/>
+        <TextBox FontSize="14" Name="txtprixMed" HorizontalAlignment="Left" Height="23" Margin="56,107.7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183" Grid.Row="1"/>
+        <Label FontSize="14" FontFamily="Verdana Pro Light" Content="Prix échantillon" HorizontalAlignment="Left" Margin="55,83.7,0,0" VerticalAlignment="Top" Grid.Row="1"/>
 
-        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="992" Opacity="0.7"/>
-        <Label FontFamily="Lucida Calligraphy" Foreground="white" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="372,22,0,0" VerticalAlignment="Top" FontSize="25"/>
-        <Button FontSize="14" FontFamily="Verdana Pro Light" Background="#FF0275D8" Content="Enregistrer" HorizontalAlignment="Left" Margin="393,464,0,0" VerticalAlignment="Top" Width="271" Height="33" BorderBrush="#FF0275D8" Foreground="White" Click="EnregistrerModif_Click"/>
-        <ListBox Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"  FontSize="14" FontFamily="Verdana Pro Light" x:Name="lstMedicamentModif" SelectionChanged="lstMedicamentModif_SelectionChanged" HorizontalAlignment="Left" Height="307" Margin="738,132,0,0" VerticalAlignment="Top" Width="220">
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7"/>
+        <Label FontFamily="Lucida Calligraphy" Foreground="white" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="436,12,0,0" VerticalAlignment="Top" FontSize="25"/>
+        <Button FontSize="14" FontFamily="Verdana Pro Light" Background="#FF0275D8" Content="Enregistrer" HorizontalAlignment="Left" Margin="436,424.7,0,0" VerticalAlignment="Top" Width="271" Height="33" BorderBrush="#FF0275D8" Foreground="White" Click="EnregistrerModif_Click" Grid.Row="1"/>
+        <ListBox Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"  FontSize="14" FontFamily="Verdana Pro Light" x:Name="lstMedicamentModif" SelectionChanged="lstMedicamentModif_SelectionChanged" HorizontalAlignment="Left" Height="335" Margin="1015,153,0,0" VerticalAlignment="Top" Width="220" Grid.RowSpan="2">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -41,12 +45,12 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <TextBox FontSize="14" x:Name="txt_nomFam" HorizontalAlignment="Left" Height="23" Margin="76,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" IsEnabled="False" Background="Gainsboro" BorderBrush="#FF737474"/>
-        <Button Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"  FontFamily="Verdana Pro Light" Content="Quitter" HorizontalAlignment="Left" Margin="883,473,0,0" VerticalAlignment="Top" Width="75" Height="24" Click="Button_Click"/>
-        <Image Source="gsb.png" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="113" Margin="10,10,0,0">
+        <Button Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"  FontFamily="Verdana Pro Light" Content="Quitter" HorizontalAlignment="Left" Margin="1106,423.7,0,0" VerticalAlignment="Top" Width="87" Height="34" Click="Button_Click" Grid.Row="1"/>
+        <Image Source="gsb.png" HorizontalAlignment="Left" Height="82" VerticalAlignment="Top" Width="136" Margin="10,2,0,0">
             <Image.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Image.Effect>
         </Image>
+        <TextBox FontSize="14" x:Name="txt_nomFam" HorizontalAlignment="Left" Height="23" Margin="56,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Grid.RowSpan="2"/>
     </Grid>
 </Window>

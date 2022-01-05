@@ -35,7 +35,7 @@ namespace Bibliothèque
         public string EffetsMed { get => effetsMed; set => effetsMed = value; }
         public string ContreIndicMed { get => contreIndicMed; set => contreIndicMed = value; }
         public double PrixEchantillonMed { get => prixEchantillonMed; set => prixEchantillonMed = value; }
-        internal Famille CodeFamille { get => codeFamille; set => codeFamille = value; }
+        public Famille CodeFamille { get => codeFamille; set => codeFamille = value; }
         internal List<Medicament> LesPerturbateurs { get => lesPerturbateurs; set => lesPerturbateurs = value; }
     }
 }

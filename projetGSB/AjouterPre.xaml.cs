@@ -37,10 +37,6 @@ namespace projetGSB
             cboTin.ItemsSource = gst.GetAllTypesIndividu();
             cboDosage.ItemsSource = gst.GetAllDosage(); 
         }
-        private void Quitter_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close(); 
-        }
 
         private void Ajouter_Click(object sender, RoutedEventArgs e)
         {
@@ -82,6 +78,10 @@ namespace projetGSB
             {
                 MessageBox.Show("Veuillez sélectionner un médicament.", "Erreur de sélection", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+        private void Quitter_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
 
     }

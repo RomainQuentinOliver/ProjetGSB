@@ -5,19 +5,34 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="AjoutPertubateur" Height="480" Width="800" Loaded="Window_Loaded_Ajout_Med_Perturbateur">
+        Title="AjoutPertubateur" Height="720" Width="1280" Loaded="Window_Loaded_Ajout_Med_Perturbateur">
     <Grid Background="AliceBlue">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="53*"/>
-            <RowDefinition Height="37*"/>
-        </Grid.RowDefinitions>
-        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="384,64.8,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="1.103,1.85" Height="28" Grid.Row="1"/>
-        <Button Content="Quitter" HorizontalAlignment="Left" Margin="666,117.8,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Height="27" Grid.Row="1"/>
-        <Grid Background="AliceBlue" Margin="0,0,-0.4,0.4" Grid.RowSpan="2">
-            <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,-1.4,0" VerticalAlignment="Top" Width="795" Opacity="0.7"/>
+        <GroupBox Background="Black" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,-1.4,0" VerticalAlignment="Top" Width="795" Opacity="0.7">
+            <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="4,-4,0,0">
+                <Image.Effect>
+                    <DropShadowEffect Opacity="0.4"/>
+                </Image.Effect>
+            </Image>
+        </GroupBox>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="530,118,0,0" VerticalAlignment="Top" Width="236"/>
+        <ListBox HorizontalAlignment="Left" Height="100" Margin="530,258,0,0" VerticalAlignment="Top" Width="236"/>
+        <Button Content="Ajouter" HorizontalAlignment="Left" Margin="384,330,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="1.103,1.85" Height="28"/>
+        <Button Content="Quitter" HorizontalAlignment="Left" Margin="666,383,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Height="27"/>
+        <Label Content="Perturbateur" HorizontalAlignment="Left" Margin="530,86,0,0" VerticalAlignment="Top"/>
+        <Grid Background="AliceBlue">
+            <GroupBox Background="#5E8BB8" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7">
+                <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="54,-4,0,-3.2">
+                    <Image.Effect>
+                        <DropShadowEffect Opacity="0.4"/>
+                    </Image.Effect>
+                </Image>
+            </GroupBox>
 
-            <Label Content="Ajouter un Médicament pertubateur" HorizontalAlignment="Left" Margin="216,20,0,0" VerticalAlignment="Top" FontSize="22" Foreground="White" FontFamily="Lucida Calligraphy" Width="461"/>
-            <ListBox x:Name="lst_Medicament" HorizontalAlignment="Left" Height="289" Margin="54,108,0,0" VerticalAlignment="Top" Width="236" Background="#FF4E4E4E" Foreground="White">
+            <Label FontFamily="Lucida Calligraphy" Foreground="white" Content="Ajout Médicament pertubateur" HorizontalAlignment="Left" Margin="556,16,0,0" VerticalAlignment="Top" FontSize="25" Width="433"/>
+            <ListBox x:Name="lst_Medicament" SelectionChanged="lst_Medicament_Selection" HorizontalAlignment="Left" Height="612" Margin="0,78,0,0" VerticalAlignment="Top" Width="301" Background="#537BA0" Foreground="White">
+                <ListBox.Effect>
+                    <DropShadowEffect Opacity="0.6"/>
+                </ListBox.Effect>
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -26,19 +41,31 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox HorizontalAlignment="Left" Height="100" Margin="530,118,0,0" VerticalAlignment="Top" Width="236" Background="#FFBABABA"/>
-            <ListBox HorizontalAlignment="Left" Height="100" Margin="530,258,0,0" VerticalAlignment="Top" Width="236" Background="#FFBDBDBD"/>
-            <Button Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Content="Ajouter" HorizontalAlignment="Left" Margin="530,369,0,0" VerticalAlignment="Top" Width="91" RenderTransformOrigin="1.103,1.85" Height="28"/>
-            <Button Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Content="Quitter" HorizontalAlignment="Left" Margin="683,398,0,0" VerticalAlignment="Top" Width="83" Click="Button_Click" Height="27"/>
-            <Label Content="Perturbateur" HorizontalAlignment="Left" Margin="530,86,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>
-            <Label Content="Non perturbateur" HorizontalAlignment="Left" Margin="530,227,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>
+            <ListBox FontSize="14" Foreground="white" Name="lst_perturbateur" HorizontalAlignment="Left" Height="211" Margin="371,266,0,0" VerticalAlignment="Top" Width="386" Background="#354E67" SelectionChanged="lst_perturbateur_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NomCommercialMed}" Width="200"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <ListBox FontSize="14" Foreground="white" Name="lst_non_perturbateur" HorizontalAlignment="Left" Height="211" Margin="791,266,0,0" VerticalAlignment="Top" Width="396" Background="#354E67" SelectionChanged="lst_non_perturbateur_SelectionChanged">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="{Binding NomCommercialMed}" Width="200"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            <Button FontSize="14" Background="#FF0275D8" BorderBrush="#FF0275D8" Foreground="White" Content="Ajouter" HorizontalAlignment="Left" Margin="791,494,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.103,1.85" Height="34" Click="Button_Click_1"/>
+            <Button Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Content="Quitter" HorizontalAlignment="Left" Margin="1077,629,0,0" VerticalAlignment="Top" Width="110" Click="Button_Click" Height="32"/>
+            <Label Content="Perturbateur(s)" HorizontalAlignment="Left" Margin="371,230,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>
+            <Label Content="Non perturbateur(s)" HorizontalAlignment="Left" Margin="791,230,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>
+            <Button FontSize="14" Background="red" BorderBrush="red" Foreground="White" Content="Retirer" HorizontalAlignment="Left" Margin="371,495,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.103,1.85" Height="33" Click="Button_Click_Retirer"/>
 
         </Grid>
-        <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="7,4,0,0">
-            <Image.Effect>
-                <DropShadowEffect Opacity="0.4"/>
-            </Image.Effect>
-        </Image>
 
     </Grid>
 </Window>

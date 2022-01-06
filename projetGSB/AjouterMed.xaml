@@ -5,14 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="AjouterMed" Height="720" Width="1280">
+        Title="AjouterMed" Height="720" Width="1280" Loaded="Window_Loaded_Ajout_Med">
     <Grid  Background="AliceBlue">
         <GroupBox Background="#5E8BB8" Header="" HorizontalAlignment="Left" Height="97" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7"/>
 
         <Label FontFamily="Lucida Calligraphy" Foreground="white" Content="Nouveau Médicament" HorizontalAlignment="Left" Margin="486,21,0,0" VerticalAlignment="Top" FontSize="28"/>
         <Label  FontFamily="Verdana Pro Light" FontSize="14" Content="Famille " HorizontalAlignment="Left" Margin="89,165,0,0" VerticalAlignment="Top"/>
 
-        <ComboBox FontFamily="Verdana Pro Light" FontSize="14" Name="cboFamille" HorizontalAlignment="Left" Margin="89,194,0,0" VerticalAlignment="Top" Width="150"/>
+        <ComboBox FontFamily="Verdana Pro Light" FontSize="14" Name="cboFamille" HorizontalAlignment="Left" Margin="89,194,0,0" VerticalAlignment="Top" Width="150">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding LibelleFamille}" Width="150"></TextBlock>
+                    </StackPanel>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
         <TextBox Foreground="White" Background="#708BA6" BorderBrush="#708BA6" FontFamily="Verdana Pro Light" FontSize="14" Name="nomMed" HorizontalAlignment="Left" Height="23" Margin="263,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="182"/>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Nom commercial" HorizontalAlignment="Left" Margin="263,168,0,0" VerticalAlignment="Top"/>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Composition" HorizontalAlignment="Left" Margin="89,275,0,0" VerticalAlignment="Top"/>
@@ -24,8 +32,8 @@
         <TextBox  Foreground="White"  Background="#708BA6" BorderBrush="#708BA6" FontFamily="Verdana Pro Light" FontSize="14" Name="prixMed" HorizontalAlignment="Left" Height="23" Margin="466,193,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="183"/>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Prix échantillon en €" HorizontalAlignment="Left" Margin="466,168,0,0" VerticalAlignment="Top"/>
 
-        <Button FontFamily="Verdana Pro Light" FontSize="14" Content="Quitter" HorizontalAlignment="Left" Margin="1159,637,0,0" VerticalAlignment="Top" Width="75" Height="34" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White"/>
-        <Button FontFamily="Verdana Pro Light" FontSize="14" Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="515,637,0,0" VerticalAlignment="Top" Width="267" Height="34" BorderBrush="#FF0275D8" Foreground="White"/>
+        <Button FontFamily="Verdana Pro Light" FontSize="14" Content="Quitter" HorizontalAlignment="Left" Margin="1159,637,0,0" VerticalAlignment="Top" Width="75" Height="34" Background="#FF292B2C" BorderBrush="#FF292B2C" Foreground="White" Click="Button_Click"/>
+        <Button FontFamily="Verdana Pro Light" FontSize="14" Background="#FF0275D8" Content="Ajouter" HorizontalAlignment="Left" Margin="515,637,0,0" VerticalAlignment="Top" Width="267" Height="34" BorderBrush="#FF0275D8" Foreground="White" Click="Button_Click_1"/>
         <Image Source="gsb.png" HorizontalAlignment="Left" Height="87" VerticalAlignment="Top" Width="128" Margin="10,0,0,0">
             <Image.Effect>
                 <DropShadowEffect Opacity="0.4"/>

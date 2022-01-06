@@ -125,5 +125,68 @@ namespace GstBdd
             dr.Close();
             return idFamille;
         }
+        public List<Famille> GetAllFamille() // Quentin
+        {
+            List<Famille> LesFamille = new List<Famille>();
+            cmd = new MySqlCommand("SELECT FAM_CODE ,FAM_LIBELLE FROM famille", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Famille codeF = new Famille(Convert.ToInt16(dr[0].ToString()), dr[1].ToString());
+                LesFamille.Add(codeF);
+            }
+            dr.Close();
+            return LesFamille;
+        }
+        public void AjoutMed(string nom, int famCode, decimal prix, string comp, string effet_med, string contre) // Quentin
+        {
+
+            double p = Convert.ToDouble(prix.ToString().Replace('.', '.'));
+
+            cmd = new MySqlCommand("INSERT INTO medicament VALUES(null,'" + nom + "'," + famCode + ",'" + comp + "','" + effet_med + "','" + contre + "'," + p + ")", cnx);
+            cmd.ExecuteNonQuery();
+        }
+
+        public List<Medicament> GetAllPertubateur(int num) // Quentin
+        {
+            List<Medicament> LesPertubateur = new List<Medicament>();
+            cmd = new MySqlCommand("SELECT MED_PERTURBATEUR, MED_NOMCOMMERCIAL, FAM_COD, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_CONTREINDIC FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_MED_PERTURBE =" + num + " GROUP BY MED_PERTURBATEUR ", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Famille codeF = new Famille(Convert.ToInt16(dr[2].ToString()), "test");
+                //Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), null, dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString()));
+                Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), null, null, null, null, 0);
+                LesPertubateur.Add(inter);
+            }
+            dr.Close();
+            return LesPertubateur;
+        }
+
+        public List<Medicament> GetAllNonPertubateur(int num) // Quentin
+        {
+            List<Medicament> LesPertubateur = new List<Medicament>();
+            cmd = new MySqlCommand("SELECT MED_DEPOTLEGAL, MED_NOMCOMMERCIAL FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_PERTURBATEUR  NOT IN(SELECT MED_PERTURBATEUR FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_MED_PERTURBE = " + num + ") GROUP BY MED_DEPOTLEGAL", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), null, null, null, null, 0);
+                LesPertubateur.Add(inter);
+            }
+            dr.Close();
+            return LesPertubateur;
+        }
+
+        public void AjoutPertubateur(int pertubateur, int pertube) // Quentin
+        {
+            cmd = new MySqlCommand("INSERT INTO interagir VALUES(" + pertubateur + "," + pertube + ")", cnx);
+            cmd.ExecuteNonQuery();
+        }
+        public void DeletePertubateur(int pertubateur, int pertube) // Quentin
+        {
+            cmd = new MySqlCommand("DELETE FROM interagir WHERE MED_PERTURBATEUR=" + pertubateur + " AND MED_MED_PERTURBE=" + pertube + ";", cnx);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
+

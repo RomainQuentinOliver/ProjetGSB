@@ -72,7 +72,8 @@ namespace projetGSB
                     {
                         gst.AjoutPertubateur(pertubateur, pertube);
                         MessageBox.Show("Le pertubateur a bien été créé.");
-                        this.Close();
+                        lst_perturbateur.ItemsSource = gst.GetAllPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+                        lst_non_perturbateur.ItemsSource = gst.GetAllNonPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
                     }
                     
                 }

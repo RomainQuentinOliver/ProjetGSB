@@ -120,7 +120,7 @@ namespace GstBdd
         public List<Medicament> GetAllNonPertubateur(int num) // Quentin
         {
             List<Medicament> LesPertubateur = new List<Medicament>();
-            cmd = new MySqlCommand("SELECT MED_PERTURBATEUR, MED_NOMCOMMERCIAL, FAM_COD, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_CONTREINDIC FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_MED_PERTURBE NOT IN(" + num + ") GROUP BY MED_PERTURBATEUR ", cnx);
+            cmd = new MySqlCommand("SELECT MED_DEPOTLEGAL, MED_NOMCOMMERCIAL FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_PERTURBATEUR  NOT IN(SELECT MED_PERTURBATEUR FROM medicament INNER JOIN interagir ON MED_DEPOTLEGAL = MED_PERTURBATEUR WHERE MED_MED_PERTURBE = " + num + ") GROUP BY MED_DEPOTLEGAL", cnx);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {

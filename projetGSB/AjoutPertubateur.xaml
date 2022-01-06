@@ -20,13 +20,7 @@
         <Button Content="Quitter" HorizontalAlignment="Left" Margin="666,383,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click" Height="27"/>
         <Label Content="Perturbateur" HorizontalAlignment="Left" Margin="530,86,0,0" VerticalAlignment="Top"/>
         <Grid Background="AliceBlue">
-            <GroupBox Background="#5E8BB8" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7">
-                <Image Source="gsb.png" HorizontalAlignment="Left" Height="68" VerticalAlignment="Top" Width="115" Margin="54,-4,0,-3.2">
-                    <Image.Effect>
-                        <DropShadowEffect Opacity="0.4"/>
-                    </Image.Effect>
-                </Image>
-            </GroupBox>
+            <GroupBox Background="#5E8BB8" Header="" HorizontalAlignment="Left" Height="83" Margin="0,-10,-0.4,0" VerticalAlignment="Top" Width="1274" Opacity="0.7"/>
 
             <Label FontFamily="Lucida Calligraphy" Foreground="white" Content="Ajout Médicament pertubateur" HorizontalAlignment="Left" Margin="556,16,0,0" VerticalAlignment="Top" FontSize="25" Width="433"/>
             <ListBox FontSize="14" x:Name="lst_Medicament" SelectionChanged="lst_Medicament_Selection" HorizontalAlignment="Left" Height="612" Margin="0,78,0,0" VerticalAlignment="Top" Width="301" Background="#537BA0" Foreground="White">
@@ -64,6 +58,11 @@
             <Label Content="Perturbateur(s)" HorizontalAlignment="Left" Margin="371,230,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>
             <Label Content="Non perturbateur(s)" HorizontalAlignment="Left" Margin="791,230,0,0" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14"/>
             <Button FontSize="14" Background="red" BorderBrush="red" Foreground="White" Content="Retirer" HorizontalAlignment="Left" Margin="371,495,0,0" VerticalAlignment="Top" Width="109" RenderTransformOrigin="1.103,1.85" Height="33" Click="Button_Click_Retirer"/>
+            <Image Source="gsb.png" HorizontalAlignment="Left" Height="73" VerticalAlignment="Top" Width="117" Margin="60,0,0,0">
+                <Image.Effect>
+                    <DropShadowEffect Opacity="0.4"/>
+                </Image.Effect>
+            </Image>
 
         </Grid>
 

@@ -20,16 +20,15 @@
             <RowDefinition Height="219*"/>
             <RowDefinition Height="252*"/>
         </Grid.RowDefinitions>
-        <GroupBox Background="#537BA0" Header="GroupBox" HorizontalAlignment="Left" Height="108" Margin="-10,73,0,0" VerticalAlignment="Top" Width="245" Grid.RowSpan="2" BorderBrush="#FF537BA0">
-            <GroupBox.Effect>
-                <DropShadowEffect Opacity="0.6"/>
-            </GroupBox.Effect>
-            <Label Foreground="white" FontFamily="Lucida Calligraphy" FontSize="25" Content="Médicaments" HorizontalAlignment="Left" Margin="21,30,0,0" VerticalAlignment="Top"/>
-        </GroupBox>
         <GroupBox Background="#5F8DB8" Header="" HorizontalAlignment="Left" Height="110" Margin="-10,-13,-0.4,0" VerticalAlignment="Top" Width="1484" Grid.ColumnSpan="2">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.2" Direction="300"/>
             </GroupBox.Effect>
+            <Button Content="Refresh" HorizontalAlignment="Left" Margin="1333,50,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_refresh">
+                <Button.Effect>
+                    <DropShadowEffect Opacity="0.5"/>
+                </Button.Effect>
+            </Button>
         </GroupBox>
         <Button BorderBrush="#FFEBF6FF" Background="AliceBlue" x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="929,49,0,0" VerticalAlignment="Top" Width="161" Height="31" FontSize="13" Click="btnAjoutPre_Click" FontFamily="DejaVu Sans" RenderTransformOrigin="1,1" Grid.ColumnSpan="2">
             <Button.Effect>
@@ -79,7 +78,7 @@
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Prix échantillon en €" HorizontalAlignment="Left" Margin="714,41.2,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.805,0.717" Grid.Row="1"/>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Effets indésirables" HorizontalAlignment="Left" Margin="998,105.2,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.009,-0.007" Grid.Row="1" Grid.ColumnSpan="2"/>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Composition" HorizontalAlignment="Left" Margin="272,105.2,0,0" VerticalAlignment="Top" Grid.Row="1"/>
-        <ListBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="lst_Medicament" HorizontalAlignment="Left" Height="545" Margin="0,66.2,0,0" VerticalAlignment="Top" Width="235" Background="#537BA0" BorderBrush="#537BA0"  Foreground="White" SelectionChanged="lst_Medicament_SelectionChanged" Grid.RowSpan="3" Grid.Row="1">
+        <ListBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="lst_Medicament" HorizontalAlignment="Left" Height="618" Margin="0,102,0,0" VerticalAlignment="Top" Width="235" Background="#537BA0" BorderBrush="#537BA0"  Foreground="White" SelectionChanged="lst_Medicament_SelectionChanged" Grid.RowSpan="4">
             <ListBox.Effect>
                 <DropShadowEffect Opacity="0.605"/>
             </ListBox.Effect>

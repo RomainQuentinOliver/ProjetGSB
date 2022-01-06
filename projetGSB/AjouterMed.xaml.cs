@@ -46,45 +46,54 @@ namespace projetGSB
                 }
                 else
                 {
-                    if (prixMed.Text == "")
+                    if (prixMed.Text != "")
                     {
-                        MessageBox.Show("Veuillez écrire un prix médicament.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
-                    }
-                    else
-                    {
-                        if (composition.Text == "")
+                        int result;
+                        if (int.TryParse(prixMed.Text, out result))
                         {
-                            MessageBox.Show("Veuillez écrire une composition.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
-                        }
-                        else
-                        {
-                            if (effet.Text == "")
+
+                            if (composition.Text == "")
                             {
-                                MessageBox.Show("Veuillez écrire un effect.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("Veuillez écrire une composition.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
                             else
                             {
-                                if (contreindic.Text == "")
+                                if (effet.Text == "")
                                 {
-                                    MessageBox.Show("Veuillez écrire une contre indication.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    MessageBox.Show("Veuillez écrire un effect.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
                                 }
                                 else
                                 {
-                                    string nom = nomMed.Text;
-                                    int famCode = (cboFamille.SelectedItem as Famille).CodeFamille;
-                                    //string prixOK = prixMed.Text.Replace(',', '.');
-                                    decimal prix = Convert.ToDecimal(prixMed.Text);
-                                    string comp = composition.Text;
-                                    string effet_med = effet.Text;
-                                    string contre = contreindic.Text;
+                                    if (contreindic.Text == "")
+                                    {
+                                        MessageBox.Show("Veuillez écrire une contre indication.", "Erreur de choix", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    }
+                                    else
+                                    {
+                                        string nom = nomMed.Text;
+                                        int famCode = (cboFamille.SelectedItem as Famille).CodeFamille;
+                                        //string prixOK = prixMed.Text.Replace(',', '.');
+                                        decimal prix = Convert.ToDecimal(prixMed.Text);
+                                        string comp = composition.Text;
+                                        string effet_med = effet.Text;
+                                        string contre = contreindic.Text;
 
-                                    gst.AjoutMed(nom, famCode, prix, comp, effet_med, contre);
+                                        gst.AjoutMed(nom, famCode, prix, comp, effet_med, contre);
 
-                                    MessageBox.Show("Le médicament a bien été créé.");
-                                    this.Close();
+                                        MessageBox.Show("Le médicament a bien été créé.");
+                                        this.Close();
+                                    }
                                 }
                             }
                         }
+                        else
+                        {
+                            MessageBox.Show("Veuillez écrire un prix valide.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Veuillez écrire un prix médicament.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
                     }
                 }
             }

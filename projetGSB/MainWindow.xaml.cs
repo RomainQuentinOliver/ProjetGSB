@@ -81,5 +81,9 @@ namespace projetGSB
             ajtPerturb.Show();
         }
 
+        private void btn_refresh(object sender, RoutedEventArgs e)
+        {
+            lst_Medicament.ItemsSource = gst.GetAllMedicaments();
+        }
     }
 }

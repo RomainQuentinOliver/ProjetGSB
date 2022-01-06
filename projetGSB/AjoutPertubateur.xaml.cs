@@ -91,11 +91,15 @@ namespace projetGSB
 
         private void Button_Click_Retirer(object sender, RoutedEventArgs e)
         {
-            int pertubateur = (lst_perturbateur.SelectedItem as Medicament).DepotLegalMed;
-            int pertube = (lst_Medicament.SelectedItem as Medicament).DepotLegalMed;
-            gst.DeletePertubateur(pertubateur, pertube);
-            lst_perturbateur.ItemsSource = gst.GetAllPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
-            lst_non_perturbateur.ItemsSource = gst.GetAllNonPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+            if (lst_perturbateur.SelectedItem != null)
+            {
+                int pertubateur = (lst_perturbateur.SelectedItem as Medicament).DepotLegalMed;
+                int pertube = (lst_Medicament.SelectedItem as Medicament).DepotLegalMed;
+                gst.DeletePertubateur(pertubateur, pertube);
+
+                lst_perturbateur.ItemsSource = gst.GetAllPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+                lst_non_perturbateur.ItemsSource = gst.GetAllNonPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+            }
         }
     }
 }

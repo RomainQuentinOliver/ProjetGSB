@@ -29,7 +29,7 @@
             </GroupBox>
 
             <Label FontFamily="Lucida Calligraphy" Foreground="white" Content="Ajout Médicament pertubateur" HorizontalAlignment="Left" Margin="556,16,0,0" VerticalAlignment="Top" FontSize="25" Width="433"/>
-            <ListBox x:Name="lst_Medicament" SelectionChanged="lst_Medicament_Selection" HorizontalAlignment="Left" Height="612" Margin="0,78,0,0" VerticalAlignment="Top" Width="301" Background="#537BA0" Foreground="White">
+            <ListBox FontSize="14" x:Name="lst_Medicament" SelectionChanged="lst_Medicament_Selection" HorizontalAlignment="Left" Height="612" Margin="0,78,0,0" VerticalAlignment="Top" Width="301" Background="#537BA0" Foreground="White">
                 <ListBox.Effect>
                     <DropShadowEffect Opacity="0.6"/>
                 </ListBox.Effect>

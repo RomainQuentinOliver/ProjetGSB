@@ -143,7 +143,7 @@ namespace GstBdd
 
             double p = Convert.ToDouble(prix.ToString().Replace('.', '.'));
 
-            cmd = new MySqlCommand("INSERT INTO medicament VALUES(null,'" + nom + "'," + famCode + ",'" + comp + "','" + effet_med + "','" + contre + "'," + p + ")", cnx);
+            cmd = new MySqlCommand("INSERT INTO medicament VALUES(null,'" + nom + "'," + famCode + ",'" + comp.Replace("'", "''") + "','" + effet_med.Replace("'", "''") + "','" + contre.Replace("'", "''") + "'," + p + ")", cnx);
             cmd.ExecuteNonQuery();
         }
 

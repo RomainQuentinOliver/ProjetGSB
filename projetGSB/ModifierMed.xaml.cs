@@ -53,54 +53,62 @@ namespace projetGSB
                 {
                     if (txtprixMed.Text != "")
                     {
-                        if (txtcomposition.Text != "")
+                        int result;
+                        if (int.TryParse(txtprixMed.Text, out result))
                         {
-                            if (txteffet.Text != "")
+                            if (txtcomposition.Text != "")
                             {
-                                if (txtcontreindic.Text != "")
+                                if (txteffet.Text != "")
                                 {
-                                    if (cboFamille.SelectedItem != null)
+                                    if (txtcontreindic.Text != "")
                                     {
-                                        int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
-                                        string nom = txtnomMed.Text;
-                                        int famille = gst.GetIdFamille((cboFamille.SelectedItem as Famille).LibelleFamille);
-                                        string composition = txtcomposition.Text;
-                                        string effets = txteffet.Text;
-                                        string contreindic = txtcontreindic.Text;
-                                        double prix = Convert.ToDouble(txtprixMed.Text);
+                                        if (cboFamille.SelectedItem != null)
+                                        {
+                                            int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
+                                            string nom = txtnomMed.Text;
+                                            int famille = gst.GetIdFamille((cboFamille.SelectedItem as Famille).LibelleFamille);
+                                            string composition = txtcomposition.Text;
+                                            string effets = txteffet.Text;
+                                            string contreindic = txtcontreindic.Text;
+                                            double prix = Convert.ToDouble(txtprixMed.Text);
 
-                                        gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
-                                        this.Close();
-                                        MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
+                                            gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
+                                            this.Close();
+                                            MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
+                                        }
+                                        else
+                                        {
+                                            int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
+                                            string nom = txtnomMed.Text;
+                                            int famille = gst.GetIdFamille(txt_nomFam.Text);
+                                            string composition = txtcomposition.Text;
+                                            string effets = txteffet.Text;
+                                            string contreindic = txtcontreindic.Text;
+                                            double prix = Convert.ToDouble(txtprixMed.Text);
+
+                                            gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
+                                            this.Close();
+                                            MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
+                                        }
                                     }
                                     else
-                                    {                                        
-                                        int id = (lstMedicamentModif.SelectedItem as Medicament).DepotLegalMed;
-                                        string nom = txtnomMed.Text;
-                                        int famille = gst.GetIdFamille(txt_nomFam.Text);
-                                        string composition = txtcomposition.Text;
-                                        string effets = txteffet.Text;
-                                        string contreindic = txtcontreindic.Text;
-                                        double prix = Convert.ToDouble(txtprixMed.Text);
-
-                                        gst.ModifierMedicament(id, nom, famille, composition, effets, contreindic, prix);
-                                        this.Close();
-                                        MessageBox.Show("Les informations du médicament ont bien été misent à jour !");
-                                    }                
+                                    {
+                                        MessageBox.Show("Veuillez saisir une contreindication", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    }
                                 }
                                 else
                                 {
-                                    MessageBox.Show("Veuillez saisir une contreindication", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                                    MessageBox.Show("Veuillez saisir un effet", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
                                 }
                             }
                             else
                             {
-                                MessageBox.Show("Veuillez saisir un effet", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                                MessageBox.Show("Veuillez saisir une composition", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
                             }
                         }
                         else
                         {
-                            MessageBox.Show("Veuillez saisir une composition", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show("Veuillez saisir un prix valide.", "Erreur de saisie", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                     else

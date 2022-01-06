@@ -5,9 +5,22 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:projetGSB"
         mc:Ignorable="d"
-        Title="ModifierTin" Height="450" Width="450" Loaded="Window_Loaded_Modifier_Tin">
+        Title="ModifierTin" Height="450" Width="550" Loaded="Window_Loaded_Modifier_Tin">
     <Grid Background="AliceBlue">
-        <ListBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="lstTin" HorizontalAlignment="Left" Height="341" Margin="0,79,0,0" VerticalAlignment="Top" Width="163" SelectionChanged="lstTin_SelectionChanged" Background="#537BA0" BorderBrush="#537BA0" Foreground="White" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="185"></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
+            <RowDefinition Height="0.9*"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        
+        <ListBox Grid.Column="0" Grid.RowSpan="5" FontFamily="Verdana Pro Light" FontSize="14" x:Name="lstTin" HorizontalAlignment="Left" Height="341" Margin="0,79,0,0" Width="163" SelectionChanged="lstTin_SelectionChanged" Background="#537BA0" BorderBrush="#537BA0" Foreground="White" >
             <ListBox.Effect>
                 <DropShadowEffect Opacity="0.6"/>
             </ListBox.Effect>
@@ -19,13 +32,13 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <GroupBox Background="#FF537BA0" Header="" HorizontalAlignment="Left" Height="89" Margin="0,-10,0,0" VerticalAlignment="Top" Width="442" Opacity="0.7"/>
+        <GroupBox Grid.Row="0" Grid.ColumnSpan="3" Background="#FF537BA0" Opacity="0.7"/>
 
-        <Label Content="Modifier un Type d'individu" HorizontalAlignment="Left" Margin="119,23,0,0" VerticalAlignment="Top" FontSize="18" Foreground="White" FontFamily="Lucida Calligraphy" Width="286"/>
-        <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Libelle" HorizontalAlignment="Left" Margin="228,133,0,0" VerticalAlignment="Top"/>
-        <TextBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="txtLibelle" HorizontalAlignment="Left" Height="23" Margin="228,161,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" />
-        <Button FontSize="13" FontFamily="Verdana Pro Light" Content="Enregistrer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="136" Margin="228,207,0,0" Height="29" Foreground="White" Background="#FF0275D8" BorderBrush="#FF0275D8" Click="Enregistrer_Click"/>
-        <Button FontFamily="Verdana Pro Light" FontSize="11" Content="Quitter" HorizontalAlignment="Left" Margin="343,373,0,0" VerticalAlignment="Top" Width="62" Height="27" Foreground="White" Background="#FF292B2C" Click="Quitter_Click"/>
+        <Label Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="3" Content="Modifier un Type d'individu" FontSize="18" Foreground="White" FontFamily="Lucida Calligraphy" />
+        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Verdana Pro Light" FontSize="14" Content="Libelle" />
+        <TextBox Grid.Row="2" Grid.Column="1" FontFamily="Verdana Pro Light" FontSize="14" x:Name="txtLibelle" Height="23" TextWrapping="Wrap" Width="136" />
+        <Button Grid.Column="1" Grid.Row="3" VerticalAlignment="Top" FontSize="13" FontFamily="Verdana Pro Light" Content="Enregistrer" Width="136" Height="29" Foreground="White" Background="#FF0275D8" BorderBrush="#FF0275D8" Click="Enregistrer_Click"/>
+        <Button Grid.Column="3" Grid.Row="5" FontFamily="Verdana Pro Light" FontSize="11" Content="Quitter" Width="62" Height="27" Foreground="White" Background="#FF292B2C" Click="Quitter_Click"/>
         <Image Source="gsb.png" HorizontalAlignment="Left" Height="65" VerticalAlignment="Top" Width="113" Margin="0,8,0,0">
             <Image.Effect>
                 <DropShadowEffect Opacity="0.4"/>

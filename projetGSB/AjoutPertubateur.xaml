@@ -35,7 +35,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox FontSize="14" Foreground="white" Name="lst_perturbateur" HorizontalAlignment="Left" Height="211" Margin="371,266,0,0" VerticalAlignment="Top" Width="386" Background="#354E67" SelectionChanged="lst_perturbateur_SelectionChanged">
+            <ListBox FontSize="14" Foreground="white" Name="lst_perturbateur" HorizontalAlignment="Left" Height="211" Margin="371,266,0,0" VerticalAlignment="Top" Width="386" Background="#354E67">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
@@ -44,7 +44,7 @@
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <ListBox FontSize="14" Foreground="white" Name="lst_non_perturbateur" HorizontalAlignment="Left" Height="211" Margin="791,266,0,0" VerticalAlignment="Top" Width="396" Background="#354E67" SelectionChanged="lst_non_perturbateur_SelectionChanged">
+            <ListBox FontSize="14" Foreground="white" Name="lst_non_perturbateur" HorizontalAlignment="Left" Height="211" Margin="791,266,0,0" VerticalAlignment="Top" Width="396" Background="#354E67">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">

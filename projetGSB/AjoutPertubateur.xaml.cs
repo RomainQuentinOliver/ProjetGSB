@@ -71,22 +71,13 @@ namespace projetGSB
                     else
                     {
                         gst.AjoutPertubateur(pertubateur, pertube);
-                        MessageBox.Show("Le pertubateur a bien été créé.");
-                        
+                        lst_perturbateur.ItemsSource = gst.GetAllPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+                        lst_non_perturbateur.ItemsSource = gst.GetAllNonPertubateur((lst_Medicament.SelectedItem as Medicament).DepotLegalMed);
+
                     }
 
                 }
             }
-        }
-
-        private void lst_non_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
-        private void lst_perturbateur_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
         }
 
         private void Button_Click_Retirer(object sender, RoutedEventArgs e)

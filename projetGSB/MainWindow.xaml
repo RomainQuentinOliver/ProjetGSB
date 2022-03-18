@@ -8,17 +8,12 @@
         Title="MainWindow" Height="720" Width="1480" Loaded="Window_Loaded_accueil">
     <Grid Background="AliceBlue" Margin="0,0,-0.4,-30">
 
-        <GroupBox Background="#5F8DB8" Header="" HorizontalAlignment="Left" Height="94" Margin="0,-13,0,0" VerticalAlignment="Top" Width="1474">
+        <GroupBox Background="#5F8DB8" Header="" HorizontalAlignment="Left" Height="100" Margin="0,-13,0,0" VerticalAlignment="Top" Width="1474">
             <GroupBox.Effect>
                 <DropShadowEffect Opacity="0.2" Direction="300"/>
             </GroupBox.Effect>
-            <Button Content="Actualiser" HorizontalAlignment="Left" Margin="164,39,0,0" VerticalAlignment="Top" Width="75" Height="23" Click="btn_refresh" Background="#FF354E67" BorderBrush="#FF354E67" Foreground="#FFFAFAFA">
-                <Button.Effect>
-                    <DropShadowEffect Opacity="0.4"/>
-                </Button.Effect>
-            </Button>
         </GroupBox>
-        <Button BorderBrush="#FFEBF6FF" Background="AliceBlue" x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="976,36,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" Click="btnAjoutPre_Click" FontFamily="Verdana Pro Light" RenderTransformOrigin="1,1">
+        <Button BorderBrush="#FFEBF6FF" Background="AliceBlue" x:Name="btnNewPre" Content="Nouvelle préscription" HorizontalAlignment="Left" Margin="976,10,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" Click="btnAjoutPre_Click" FontFamily="Verdana Pro Light" RenderTransformOrigin="1,1">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Button.Effect>
@@ -29,27 +24,27 @@
             </Image.Effect>
         </Image>
 
-        <Button BorderBrush="#FFD5ECFF" Background="AliceBlue" x:Name="btnNewPre_Copy" Content="Nouveau Type Invdividu" HorizontalAlignment="Left" Margin="278,36,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" Click="btnAjouTin_Click" FontFamily="Verdana Pro Light">
+        <Button BorderBrush="#FFD5ECFF" Background="AliceBlue" x:Name="btnNewPre_Copy" Content="Nouveau Type Invdividu" HorizontalAlignment="Left" Margin="278,10,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" Click="btnAjouTin_Click" FontFamily="Verdana Pro Light">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Button.Effect>
         </Button>
-        <Button BorderBrush="#FFDDEFFF" Background="AliceBlue" x:Name="btnNewPre_Copy1" Content="Nouveau Médicament" Margin="628,36,678,0" VerticalAlignment="Top" Height="31" FontSize="13" Click="btnAjoutMed_Click" FontFamily="Verdana Pro Light">
+        <Button BorderBrush="#FFDDEFFF" Background="AliceBlue" x:Name="btnNewPre_Copy1" Content="Nouveau Médicament" Margin="628,10,678,0" VerticalAlignment="Top" Height="31" FontSize="13" Click="btnAjoutMed_Click" FontFamily="Verdana Pro Light">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Button.Effect>
         </Button>
-        <Button BorderBrush="#FFDCEFFF" Background="AliceBlue" x:Name="btnModifTn" Click="btnModifierTin_Click" Content="Modifier Type Individu" HorizontalAlignment="Left" Margin="453,36,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light">
+        <Button BorderBrush="#FFDCEFFF" Background="AliceBlue" x:Name="btnModifTn" Click="btnModifierTin_Click" Content="Modifier Type Individu" HorizontalAlignment="Left" Margin="453,10,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Button.Effect>
         </Button>
-        <Button BorderBrush="#FFE2F2FF" Background="AliceBlue" x:Name="btnModifMed" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="801,36,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13"  Click="btnModifierMed_Click" FontFamily="Verdana Pro Light" RenderTransformOrigin="0.197,0.66">
+        <Button BorderBrush="#FFE2F2FF" Background="AliceBlue" x:Name="btnModifMed" Content="Modifier Médicament" HorizontalAlignment="Left" Margin="801,10,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13"  Click="btnModifierMed_Click" FontFamily="Verdana Pro Light" RenderTransformOrigin="0.197,0.66">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Button.Effect>
         </Button>
-        <Button BorderBrush="#FFE8F4FF" Background="AliceBlue" x:Name="btnAjtPerturbateur" Content="Ajouter Perturbateur" HorizontalAlignment="Left" Margin="1151,36,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light" RenderTransformOrigin="1,1" Click="btnAjtPerturbateur_Click">
+        <Button BorderBrush="#FFE8F4FF" Background="AliceBlue" x:Name="btnAjtPerturbateur" Content="Ajouter Perturbateur" HorizontalAlignment="Left" Margin="1151,10,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light" RenderTransformOrigin="1,1" Click="btnAjtPerturbateur_Click">
             <Button.Effect>
                 <DropShadowEffect Opacity="0.4"/>
             </Button.Effect>
@@ -75,7 +70,7 @@
         </Label>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Effets indésirables" HorizontalAlignment="Left" Margin="998,121,0,0" VerticalAlignment="Top" RenderTransformOrigin="2.009,-0.007"/>
         <Label FontFamily="Verdana Pro Light" FontSize="14" Content="Composition" HorizontalAlignment="Left" Margin="272,218,0,0" VerticalAlignment="Top" RenderTransformOrigin="1.673,2.566"/>
-        <ListBox FontFamily="Verdana Pro Light" FontSize="14" x:Name="lst_Medicament" HorizontalAlignment="Left" Height="618" Margin="0,102,0,0" VerticalAlignment="Top" Width="235" Background="#537BA0" BorderBrush="#537BA0"  Foreground="White" SelectionChanged="lst_Medicament_SelectionChanged" Grid.RowSpan="4">
+        <ListBox FontFamily="Verdana Pro Light" FontSize="14" Name="lst_Medicament" HorizontalAlignment="Left" Height="618" Margin="0,102,0,0" VerticalAlignment="Top" Width="235" Background="#537BA0" BorderBrush="#537BA0"  Foreground="White" SelectionChanged="lst_Medicament_SelectionChanged" Grid.RowSpan="4">
             <ListBox.Effect>
                 <DropShadowEffect Opacity="0.605"/>
             </ListBox.Effect>
@@ -87,5 +82,35 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
+        <Button BorderBrush="#FFE8F4FF" Background="AliceBlue" x:Name="btnStatistiques" Content="Statistiques" HorizontalAlignment="Left" Margin="1326,10,0,0" VerticalAlignment="Top" Width="139" Height="31" FontSize="13" FontFamily="Verdana Pro Light" RenderTransformOrigin="1,1" Click="btnAjtPerturbateur_Click">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Button.Effect>
+        </Button>
+        <Button BorderBrush="#FFD5ECFF" Background="AliceBlue" x:Name="btnNewReg" Content="Nouvelle région" HorizontalAlignment="Left" Margin="278,46,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" Click="btnAjtReg_Click" FontFamily="Verdana Pro Light">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Button.Effect>
+        </Button>
+        <Button BorderBrush="#FFD5ECFF" Background="AliceBlue" x:Name="btnNewVis" Content="Nouveau Visiteur" HorizontalAlignment="Left" Margin="628,46,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" Click="btnAjtVis_Click" FontFamily="Verdana Pro Light">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Button.Effect>
+        </Button>
+        <Button BorderBrush="#FFDCEFFF" Background="AliceBlue" x:Name="btnModifReg" Click="btnModifierReg_Click" Content="Modifier Région" HorizontalAlignment="Left" Margin="453,46,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Button.Effect>
+        </Button>
+        <Button BorderBrush="#FFDCEFFF" Background="AliceBlue" x:Name="btnModifVis" Click="btnModifierVis_Click" Content="Modifier Visiteur" HorizontalAlignment="Left" Margin="803,46,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Button.Effect>
+        </Button>
+        <Button BorderBrush="#FFDCEFFF" Background="AliceBlue" x:Name="btnTravailVis" Click="btnTravailVis_Click" Content="Travail Visiteur" HorizontalAlignment="Left" Margin="978,46,0,0" VerticalAlignment="Top" Width="170" Height="31" FontSize="13" FontFamily="Verdana Pro Light">
+            <Button.Effect>
+                <DropShadowEffect Opacity="0.4"/>
+            </Button.Effect>
+        </Button>
     </Grid>
 </Window>

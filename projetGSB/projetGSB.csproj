@@ -70,6 +70,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TravailVis.xaml.cs">
+      <DependentUpon>TravailVis.xaml</DependentUpon>
+    </Compile>
     <Page Include="AjouterMed.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -82,7 +85,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ajouterVisiteur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AjoutPertubateur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AjoutRegion.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -99,8 +110,14 @@
     <Compile Include="AjouterTin.xaml.cs">
       <DependentUpon>AjouterTin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ajouterVisiteur.xaml.cs">
+      <DependentUpon>ajouterVisiteur.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AjoutPertubateur.xaml.cs">
       <DependentUpon>AjoutPertubateur.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AjoutRegion.xaml.cs">
+      <DependentUpon>AjoutRegion.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
@@ -114,7 +131,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="modifierReg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ModifierTin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="modifierVisiteur.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TravailVis.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,8 +152,14 @@
     <Compile Include="ModifierMed.xaml.cs">
       <DependentUpon>ModifierMed.xaml</DependentUpon>
     </Compile>
+    <Compile Include="modifierReg.xaml.cs">
+      <DependentUpon>modifierReg.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ModifierTin.xaml.cs">
       <DependentUpon>ModifierTin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="modifierVisiteur.xaml.cs">
+      <DependentUpon>modifierVisiteur.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

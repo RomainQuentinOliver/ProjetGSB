@@ -24,11 +24,11 @@ namespace GstBdd
         public List<Medicament> GetAllMedicaments() // Oliver
         {
             List<Medicament> LesMedicaments = new List<Medicament>();
-            cmd = new MySqlCommand("SELECT MED_DEPOTLEGAL, MED_NOMCOMMERCIAL, FAM_COD, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_PRIXECHANTILLON FROM medicament", cnx);
+            cmd = new MySqlCommand("SELECT MED_DEPOTLEGAL, MED_NOMCOMMERCIAL, FAM_COD, MED_COMPOSITION, MED_EFFETS, MED_CONTREINDIC, MED_PRIXECHANTILLON,FAM_LIBELLE  FROM medicament INNER JOIN Famille ON FAM_CODE = FAM_COD", cnx);
             dr = cmd.ExecuteReader();
             while (dr.Read())
             {
-                Famille codeF = new Famille(Convert.ToInt16(dr[2].ToString()), "test");
+                Famille codeF = new Famille(Convert.ToInt16(dr[2].ToString()), dr[7].ToString());
                 Medicament uneNouveauMedicament = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), codeF, dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString()));
                 LesMedicaments.Add(uneNouveauMedicament);
             }
@@ -155,7 +155,7 @@ namespace GstBdd
             while (dr.Read())
             {
                 Famille codeF = new Famille(Convert.ToInt16(dr[2].ToString()), "test");
-                //Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), null, dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString()));
+                /*  Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), codeF, dr[3].ToString(), dr[4].ToString(), dr[5].ToString(), Convert.ToDouble(dr[6].ToString())); */
                 Medicament inter = new Medicament(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), null, null, null, null, 0);
                 LesPertubateur.Add(inter);
             }
@@ -185,6 +185,137 @@ namespace GstBdd
         public void DeletePertubateur(int pertubateur, int pertube) // Quentin
         {
             cmd = new MySqlCommand("DELETE FROM interagir WHERE MED_PERTURBATEUR=" + pertubateur + " AND MED_MED_PERTURBE=" + pertube + ";", cnx);
+            cmd.ExecuteNonQuery();
+        }
+
+
+        // Fonctionnalité 2 
+
+        public List<Secteur> GetAllSecteur()
+        {
+            List<Secteur> LesSecteurs = new List<Secteur>();
+
+            cmd = new MySqlCommand("SELECT SEC_CODE, SEC_LIBELLE FROM secteur", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Secteur unNouveauSecteur = new Secteur(Convert.ToInt16(dr[0].ToString()), dr[1].ToString());
+                LesSecteurs.Add(unNouveauSecteur); 
+            }
+            dr.Close(); 
+            return LesSecteurs;
+        }
+        public List<Labo> GetAllLabo()
+        {
+            List<Labo> LesLabos = new List<Labo>();
+
+            cmd = new MySqlCommand("SELECT LAB_CODE, LAB_NOM, LAB_CHEFVENTE FROM labo", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Labo unNouveauLabo = new Labo(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), dr[2].ToString()) ;
+                LesLabos.Add(unNouveauLabo);
+            }
+            dr.Close();
+            return LesLabos;
+        }
+
+        public List<Region> GetAllRegion()
+        {
+            List<Region> LesRegions = new List<Region>();
+
+            cmd = new MySqlCommand("SELECT REG_CODE, SEC_CODE, REG_NOM FROM region", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Secteur codeSec = new Secteur(Convert.ToInt16(dr[1].ToString()), "test");
+                Region uneNouvelleRegion = new Region(Convert.ToInt16(dr[0].ToString()), codeSec, dr[2].ToString());
+                LesRegions.Add(uneNouvelleRegion);
+            }
+            dr.Close();
+            return LesRegions;
+        }
+
+        public List<Visiteur> GetAllVisiteur()
+        {
+            List<Visiteur> LesVisiteurs = new List<Visiteur>();
+
+            cmd = new MySqlCommand("SELECT VIS_MATRICULE,VIS_NOM,VIS_PRENOM,VIS_ADRESSE,VIS_CP,VIS_VILLE,VIS_DATEEMBAUCHE,secteur.SEC_CODE,labo.LAB_CODE,SEC_LIBELLE,LAB_NOM,LAB_CHEFVENTE FROM visiteur INNER JOIN secteur ON visiteur.SEC_CODE = secteur.SEC_CODE INNER JOIN labo ON labo.LAB_CODE = visiteur.LAB_CODE", cnx);
+            dr = cmd.ExecuteReader();
+            while (dr.Read())
+            {
+                Secteur codeSec = new Secteur(Convert.ToInt16(dr[7].ToString()),dr[9].ToString());
+                Labo codeLabo = new Labo(Convert.ToInt16(dr[8].ToString()),dr[10].ToString(),dr[11].ToString());
+                Visiteur unNouveauVisiteur = new Visiteur(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), Convert.ToInt32(dr[4].ToString()), dr[5].ToString(), dr[6].ToString(), codeSec, codeLabo);
+                LesVisiteurs.Add(unNouveauVisiteur);
+            }
+            dr.Close();
+            return LesVisiteurs;
+        }
+
+     /*   public Labo GetLaboById(int codeLabo)
+        {
+
+            cmd = new MySqlCommand("SELECT LAB_CODE, LAB_NOM, LAB_CHEFVENTE FROM labo WHERE LAB_CODE = " + codeLabo, cnx);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            Labo unLabo = new Labo(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), dr[2].ToString());
+            dr.Close();
+            return unLabo;
+        }*/
+
+        /*public Secteur GetSecteurById(int codeSec)
+        {
+
+            cmd = new MySqlCommand("SELECT SEC_CODE, SEC_LIBELLE FROM secteur WHERE SEC_CODE = " + codeSec, cnx);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            Secteur unSecteur = new Secteur(Convert.ToInt16(dr[0].ToString()), dr[1].ToString());
+            dr.Close();
+            return unSecteur;
+        }*/
+
+        public Labo GetLaboByNom(string nomLab)
+        {
+            cmd = new MySqlCommand("SELECT LAB_CODE, LAB_NOM, LAB_CHEFVENTE FROM labo WHERE LAB_NOM = '" + nomLab + "'", cnx);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            Labo unLabo = new Labo(Convert.ToInt16(dr[0].ToString()), dr[1].ToString(), dr[2].ToString()) ;
+            dr.Close();
+            return unLabo;
+        }
+
+        public Secteur GetSecteurByNom(string nomSec)
+        {
+            cmd = new MySqlCommand("SELECT SEC_CODE, SEC_LIBELLE FROM secteur WHERE SEC_LIBELLE = '" + nomSec + "'", cnx);
+            dr = cmd.ExecuteReader();
+            dr.Read();
+            Secteur unSecteur = new Secteur(Convert.ToInt16(dr[0].ToString()), dr[1].ToString());
+            dr.Close();
+            return unSecteur;
+        }
+
+
+        public void AjoutRegion(int SecCode, string RegNom)
+        {
+            cmd = new MySqlCommand("INSERT INTO region (REG_CODE,SEC_CODE,REG_NOM) VALUES (null," + SecCode + ", '" + RegNom + "')", cnx );
+            cmd.ExecuteNonQuery();
+        }
+
+        public void AjoutVis(string visNom, string visPrenom, string visAdresse, int visCp, string visVille, string dateEmbauche, int secCode, int labCode)
+        {
+            cmd = new MySqlCommand("INSERT INTO visiteur (VIS_NOM,VIS_PRENOM,VIS_ADRESSE,VIS_CP,VIS_VILLE,VIS_DATEEMBAUCHE,SEC_CODE,LAB_CODE) VALUES ('" + visNom + "', '" + visPrenom + "', '" + visAdresse  + "', " + visCp + ", '" + visVille + "', '" + dateEmbauche + "', " + secCode + ", " + labCode + ")", cnx);
+            cmd.ExecuteNonQuery();
+        }
+        public void ModifierRegion(int codeSec, string newNomReg, int RegCode) 
+        {
+            cmd = new MySqlCommand("UPDATE region SET SEC_CODE = '" + codeSec + "', REG_NOM = '" + newNomReg + "' WHERE REG_CODE = " + RegCode, cnx);
+            cmd.ExecuteNonQuery();
+        }
+
+        public void ModifierVisiteur(int matricule, string nom, string prenom, string adresse, int codePostal, string ville, string dateEmbauche, int secCode, int labCode)
+        {
+            cmd = new MySqlCommand("UPDATE visiteur SET VIS_NOM = '" + nom + "', VIS_PRENOM = '" + prenom + "', VIS_ADRESSE = '" + adresse + "', VIS_CP = " + codePostal + ", VIS_VILLE = '" + ville + "', VIS_DATEEMBAUCHE = '" + dateEmbauche + "', SEC_CODE = " + secCode + ", LAB_CODE = " + labCode + "  WHERE VIS_MATRICULE = " + matricule, cnx);
             cmd.ExecuteNonQuery();
         }
     }

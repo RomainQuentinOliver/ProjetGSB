@@ -50,7 +50,7 @@ namespace projetGSB
             {
                 txt_nomCommercial.Text = (lst_Medicament.SelectedItem as Medicament).NomCommercialMed;
                 int depotLegal = (lst_Medicament.SelectedItem as Medicament).DepotLegalMed;
-                txt_famille.Text = gst.GetNomFamilleByIdMed(depotLegal);
+                txt_famille.Text = ((lst_Medicament.SelectedItem as Medicament).CodeFamille as Famille).LibelleFamille;
                 txt_composition.Text = (lst_Medicament.SelectedItem as Medicament).CompositionMed;
                 txt_effets.Text = (lst_Medicament.SelectedItem as Medicament).EffetsMed;
                 txt_contreIndic.Text = (lst_Medicament.SelectedItem as Medicament).ContreIndicMed;
@@ -84,6 +84,32 @@ namespace projetGSB
         private void btn_refresh(object sender, RoutedEventArgs e)
         {
             lst_Medicament.ItemsSource = gst.GetAllMedicaments();
+        }
+
+
+        // Fonctionnalité 2 
+        private void btnAjtReg_Click(object sender, RoutedEventArgs e)
+        {
+            AjoutRegion ajtRegion = new AjoutRegion(gst);
+            ajtRegion.Show();
+        }
+
+        private void btnAjtVis_Click(object sender, RoutedEventArgs e)
+        {
+            ajouterVisiteur ajtVisiteur = new ajouterVisiteur(gst);
+            ajtVisiteur.Show();
+        }
+
+        private void btnModifierReg_Click(object sender, RoutedEventArgs e)
+        {
+            modifierReg modifierReg = new modifierReg(gst);
+            modifierReg.Show();
+        }
+
+        private void btnModifierVis_Click(object sender, RoutedEventArgs e)
+        {
+            modifierVisiteur modifierVis = new modifierVisiteur(gst);
+            modifierVis.Show(); 
         }
     }
 }
